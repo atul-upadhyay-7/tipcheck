@@ -1,14 +1,14 @@
-export default function Header({ lang, onLangChange }) {
+export default function Header({ lang, onLangChange, t }) {
   return (
     <header>
       <h1>TipCheck</h1>
-      <p>Pause before trusting a financial message.</p>
-      <p>Education only. Not investment advice. Remove names, phone numbers and account details before pasting.</p>
+      <p>{t.tagline}</p>
+      <p>{t.disclaimer}</p>
       <label>
-        Language{' '}
+        {t.language}{' '}
         <select value={lang} onChange={(e) => onLangChange(e.target.value)}>
           <option value="en">English</option>
-          <option value="hi">Hindi</option>
+          <option value="hi">हिन्दी</option>
         </select>
       </label>
     </header>

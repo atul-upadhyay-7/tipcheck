@@ -1,12 +1,12 @@
 import { EXAMPLES } from '../data/examples.js';
 
-export default function ExampleList({ onPick }) {
+export default function ExampleList({ onPick, t }) {
   return (
     <section>
-      <h2>Try a fictional example</h2>
+      <h2>{t.examples}</h2>
       {EXAMPLES.map((example, i) => (
         <button key={i} type="button" onClick={() => onPick(example)}>
-          Example {i + 1}
+          {t.example} {i + 1}
         </button>
       ))}
     </section>
