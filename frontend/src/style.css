@@ -1093,5 +1093,15 @@ footer {
 }
 footer > span:last-child,
 .muted {
-  color: #7d6b58;
+  color: #715f4d;
+}
+
+.result-anchor {
+  scroll-margin-top: 18px;
+  outline: none;
+}
+.result-anchor:focus-visible {
+  outline: 2px solid #a8442b;
+  outline-offset: 4px;
+  border-radius: 12px;
 }

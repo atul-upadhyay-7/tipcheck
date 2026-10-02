@@ -1,5 +1,7 @@
 export const STRINGS = {
   en: {
+    emptyCaution:
+      "Nothing has been checked yet. This tool does not verify identities or guarantee safety.",
     eyebrow: "Financial content literacy",
     heroStart: "Read the tip.",
     heroAccent: "Not the hype.",
@@ -69,6 +71,8 @@ export const STRINGS = {
       "Could not check this message. The request may have timed out. Check that the backend is running, then try again.",
   },
   hi: {
+    emptyCaution:
+      "अभी कोई जांच नहीं हुई है। यह उपकरण पहचान सत्यापित नहीं करता और सुरक्षा की गारंटी नहीं देता।",
     eyebrow: "वित्तीय संदेशों को समझें",
     heroStart: "टिप को समझें।",
     heroAccent: "दावे पर न बहकें।",

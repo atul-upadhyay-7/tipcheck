@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { analyzeMessage } from "./api/client.js";
 import ExampleList from "./components/ExampleList.jsx";
 import Header from "./components/Header.jsx";
@@ -18,6 +18,19 @@ export default function App() {
   const [lang, setLang] = useState("en");
   const t = STRINGS[lang];
   const requestId = useRef(0);
+  const resultPanel = useRef(null);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+  useEffect(() => {
+    if (data && window.matchMedia("(max-width: 1023px)").matches) {
+      resultPanel.current?.focus({ preventScroll: true });
+      resultPanel.current?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+    }
+  }, [data]);
 
   function changeText(value) {
     requestId.current += 1;
@@ -66,13 +79,20 @@ export default function App() {
               <ExampleList onPick={changeText} t={t} />
               <p className="disclaimer-box">{t.disclaimer}</p>
             </SpotlightCard>
-            <SpotlightCard className="output-panel">
-              {data ? (
-                <ResultPanel data={data} lang={lang} t={t} />
-              ) : (
-                <EmptyResult t={t} busy={busy} />
-              )}
-            </SpotlightCard>
+            <div
+              className="result-anchor"
+              ref={resultPanel}
+              tabIndex={-1}
+              aria-label={t.resultEyebrow}
+            >
+              <SpotlightCard className="output-panel">
+                {data ? (
+                  <ResultPanel data={data} lang={lang} t={t} />
+                ) : (
+                  <EmptyResult t={t} busy={busy} />
+                )}
+              </SpotlightCard>
+            </div>
           </div>
           <footer>
             <span>

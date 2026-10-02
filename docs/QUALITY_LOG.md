@@ -26,6 +26,10 @@ Tailwind CSS, Motion and Lucide icons now support an original navy/teal workspac
 
 Replaced rejected navy/teal colors with warm paper, near-black ink and terracotta. Removed pointer glow entirely. Preserved layout, bilingual content, motion preferences and guardrails. Settled desktop and Hindi phone screenshots inspected; full regression checks rerun. This is a visual change, not a new analyzer or accuracy claim.
 
+## October 2: phone result navigation and accessibility checks
+
+Phone checks now focus and scroll to the new analysis, rather than leaving results below a long input panel. Language switching updates the document language for assistive tools. The untouched empty panel says nothing has been checked, rather than reporting no flags. Darkened borderline footer text contrast. An axe automated check on the Hindi phone result reported no violations after the fix; this is not a full accessibility certification. All normal regression checks and settled screenshots were checked again.
+
 ## Known limitations
 
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.

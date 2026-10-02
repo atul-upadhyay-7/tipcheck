@@ -21,7 +21,7 @@ export default function EmptyResult({ t, busy }) {
           </div>
         ))}
       </div>
-      <p className="empty-caution">{t.noFlags}</p>
+      <p className="empty-caution">{t.emptyCaution}</p>
     </section>
   );
 }
