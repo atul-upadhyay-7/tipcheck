@@ -18,6 +18,10 @@ These are developer-authored regression cases, not an independent benchmark. No 
 - Example buttons now have meaningful English/Hindi names rather than numbers. Long untrusted URL text wraps on phones; keyboard focus is visible.
 - Browser regression checks cover every fictional demo seed, mobile long URLs, backend failure/retry and late-response protection. Desktop and 390px Hindi screenshots were visually inspected.
 
+## October 2 evening: UI redesign
+
+Tailwind CSS, Motion and Lucide icons now support an original navy/teal workspace with flat surfaces, editorial headline, clear input/evidence separation and stacked mobile layout. No paid assets, copied React Bits components, WebGL, remote fonts or images. System reduced-motion preferences are respected. Developer checks exercised all demo examples, language switching, errors/retry and stale-response protection; actual desktop and Hindi mobile pixels were inspected after transitions settled. See UI_DESIGN.md and UI_LICENSE_NOTICES.md for sources and notices.
+
 ## Known limitations
 
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.

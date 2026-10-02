@@ -1,14 +1,25 @@
-import { EXAMPLES } from '../data/examples.js';
-
+import { EXAMPLES } from "../data/examples.js";
+import { Sparkles } from "lucide-react";
 export default function ExampleList({ onPick, t }) {
   return (
-    <section>
-      <h2>{t.examples}</h2>
-      {EXAMPLES.map((example, i) => (
-        <button key={i} type="button" onClick={() => onPick(example)}>
-          {t.exampleNames[i]}
-        </button>
-      ))}
+    <section className="example-section">
+      <h3>
+        <Sparkles size={15} />
+        {t.examples}
+      </h3>
+      <div className="example-grid">
+        {EXAMPLES.map((example, i) => (
+          <button
+            className="example-chip"
+            key={i}
+            type="button"
+            onClick={() => onPick(example)}
+          >
+            <span className={`example-dot dot-${i}`} />
+            {t.exampleNames[i]}
+          </button>
+        ))}
+      </div>
     </section>
   );
 }

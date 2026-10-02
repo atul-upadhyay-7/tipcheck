@@ -1,24 +1,60 @@
-import FlagList from './FlagList.jsx';
-import RiskMeter from './RiskMeter.jsx';
-import VerdictBadge from './VerdictBadge.jsx';
-
+import { motion } from "motion/react";
+import { ShieldQuestion, ExternalLink, Link2 } from "lucide-react";
+import FlagList from "./FlagList.jsx";
+import RiskMeter from "./RiskMeter.jsx";
+import VerdictBadge from "./VerdictBadge.jsx";
 export default function ResultPanel({ data, lang, t }) {
   return (
-    <section aria-live="polite">
+    <motion.section
+      className="result-panel"
+      aria-live="polite"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      <div className="result-header">
+        <span className="eyebrow">02 / {t.resultEyebrow}</span>
+        <span className="engine-badge">{t.modes[data.mode] || data.mode}</span>
+      </div>
       <VerdictBadge label={data.label} t={t} />
       <RiskMeter score={data.risk_score} level={data.risk_level} t={t} />
-      <p><small>{t.engine}: {t.modes[data.mode] || data.mode}. {t.scoreNote}</small></p>
-      {data.context_warning && <p>{t.context}</p>}
+      <p className="score-note">{t.scoreNote}</p>
+      {data.context_warning && <p className="context-note">{t.context}</p>}
       <FlagList flags={data.flags} lang={lang} t={t} />
-      <h3>{t.verifyTitle}</h3>
-      <ol>{t.verify.map((v, i) => <li key={i}>{v}</li>)}</ol>
-      <a href="https://www.sebi.gov.in/intermediaries.html" target="_blank" rel="noreferrer">{t.sebiResources}</a>
+      <div className="verify-box">
+        <h3>
+          <ShieldQuestion size={18} />
+          {t.verifyTitle}
+        </h3>
+        <ol>
+          {t.verify.map((v, i) => (
+            <li key={i}>
+              <span className="verify-number">{i + 1}</span>
+              <span>{v}</span>
+            </li>
+          ))}
+        </ol>
+        <a
+          href="https://www.sebi.gov.in/intermediaries.html"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {t.sebiResources}
+          <ExternalLink size={14} />
+        </a>
+      </div>
       {data.links.length > 0 && (
-        <>
-          <p>{t.urls}</p>
-          <ul>{data.links.map((u, i) => <li key={i}>{u}</li>)}</ul>
-        </>
+        <div className="detected-links">
+          <h3>
+            <Link2 size={16} />
+            {t.urls}
+          </h3>
+          <ul>
+            {data.links.map((u, i) => (
+              <li key={i}>{u}</li>
+            ))}
+          </ul>
+        </div>
       )}
-    </section>
+    </motion.section>
   );
 }

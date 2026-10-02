@@ -13,8 +13,12 @@
     "node": ">=20.19"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.50.0",
+    "motion": "^14.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
