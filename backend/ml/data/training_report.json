@@ -1,0 +1,31 @@
+{
+  "model": "logreg",
+  "train_rows": 294,
+  "train_groups": 75,
+  "train_labels": {
+    "promotion": 165,
+    "education": 129
+  },
+  "train_languages": {
+    "legacy_unspecified": 204,
+    "en": 30,
+    "hinglish": 30,
+    "hi": 30
+  },
+  "grouped_cv_macro_f1": {
+    "logreg": {
+      "mean": 0.9072449226509178,
+      "folds": [
+        0.9060074734118999,
+        0.8853398853398853,
+        0.9303874092009685
+      ]
+    }
+  },
+  "seed": 42,
+  "evaluation_used_for_selection": false,
+  "data_files": [
+    "dataset.csv (train only)",
+    "overnight_train.json"
+  ]
+}

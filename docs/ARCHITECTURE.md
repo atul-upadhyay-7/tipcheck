@@ -50,4 +50,8 @@ Rules lead. If the rules say `promotion` or `education`, that stands. Only uncer
 
 ## Production single-origin route
 
-When `frontend/dist` exists, FastAPI mounts those static files last. `/api/health` and `/api/analyze` aliases bypass the static mount; existing `/health`, `/analyze` and `/docs` remain. No Vite proxy or CORS needed on one origin. See DEPLOYMENT.md for commands and host caveats.
+When `frontend/dist` exists, FastAPI mounts those static files last. `/api/health` and `/api/analyze` aliases bypass the static mount; existing `/health`, `/analyze` and `/docs` remain. No Vite proxy or CORS needed on one origin.
+
+## Expanded ML corpus
+
+`backend/ml/corpus.py` separates legacy train rows, new multilingual scenario training and frozen v2 evaluation. `train.py` selects on grouped train-only CV and produces an ignored local model plus training metadata. `evaluate.py` explicitly compares rules, raw argmax, thresholded model and hybrid decisions, including abstentions and language slices. Tracked JSON reports and `data/EVALUATION_V2.md` preserve the first synthetic report. New scenarios are same-author, not independent review or real-world validation. Training does not alter API threshold or rule precedence.

@@ -43,3 +43,13 @@ FastAPI now serves a built frontend and /api aliases on the same origin, removin
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.
 
 Before submission: have another Hindi speaker review wording, add independently authored evaluation examples, practise the demo offline, and confirm organiser team/outside-help/IP rules. No prototype or score guarantees a competition win.
+
+## Expanded ML sanity check, October 2 overnight
+
+Added 90 synthetic multilingual training rows in 30 scenario groups; total fit uses 294 rows in 75 groups. Frozen new evaluation before fitting (48 variants, 16 scenarios). Structural split/duplicate guards add four tests, bringing backend 37 + frontend 7. Logistic regression train-only grouped CV macro-F1 0.907. New hybrid synthetic macro-F1 0.609 versus starter 0.480 on the same slice, with 25/48 abstentions; promotion recall 0.333. Raw argmax 0.873 is not API accuracy. Threshold unchanged, no tuning against new evaluation. Same-author data and correlated translations, independent review still needed. See `backend/ml/data/EVALUATION_V2.md` and JSON reports.
+
+User requested removal of the standalone deployment guide after the previous push. Removed it and its README links; retained the tested production routing itself. No hosting work performed.
+
+## Validation privacy hardening
+
+Rejected input can contain personal information. Replaced the default FastAPI/Pydantic error serialization with location/message/type only; no raw input or error context is echoed. Added over-limit private-marker and malformed-JSON regressions. Backend now 39 tests, frontend 7. This does not promise that a hosting provider never logs data; no request-body logging was added.

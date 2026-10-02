@@ -56,3 +56,19 @@ def test_paid_course_with_disclaimer_is_not_flagged_as_scam():
 def test_model_files_are_optional():
     # The API must answer whether or not ml/model.joblib exists.
     assert client.post("/analyze", json={"text": "Guaranteed returns, join VIP now"}).status_code == 200
+
+
+def test_validation_errors_do_not_echo_private_input():
+    marker = "fictional-private-marker"
+    response = client.post("/api/analyze", json={"text": marker * 100})
+    assert response.status_code == 422
+    assert marker not in response.text
+    assert all("input" not in error and "ctx" not in error for error in response.json()["detail"])
+
+
+def test_malformed_json_is_handled_without_echo():
+    marker = "fictional-private-marker"
+    response = client.post("/api/analyze", content='{"text":"' + marker,
+                           headers={"Content-Type": "application/json"})
+    assert response.status_code == 422
+    assert marker not in response.text

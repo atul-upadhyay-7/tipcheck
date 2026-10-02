@@ -92,9 +92,10 @@ tipcheck/
 │   │       └── model.py           Optional local classifier loader
 │   ├── ml/
 │   │   ├── build_dataset.py       Reproducible synthetic-data builder
-│   │   ├── train.py               Group-aware TF-IDF model training
-│   │   ├── evaluate.py            Historical-system evaluation utility
-│   │   └── data/                 CSV plus provenance and benchmark caveats
+│   │   ├── corpus.py              Scenario loader and split guards
+│   │   ├── train.py               Train-only grouped CV and fitting
+│   │   ├── evaluate.py            Frozen synthetic evaluation and language metrics
+│   │   └── data/                 CSV, multilingual scenarios, JSON reports and caveats
 │   ├── tests/                    API, rule and adversarial regressions
 │   ├── requirements.txt          Runtime dependencies
 │   └── requirements-dev.txt      Test / lint dependencies
@@ -132,7 +133,7 @@ Rules lead for explicit promotion and protective education. The optional model f
 ## Checks
 
 ```bash
-make test    # 33 backend tests + 7 frontend tests at this revision
+make test    # 39 backend tests + 7 frontend tests at this revision
 make lint    # Ruff backend checks
 make build   # Vite production frontend build
 make smoke   # Both dev servers must already be running
@@ -155,9 +156,11 @@ Windows uses `.venv\Scripts\python.exe` and `.venv\Scripts\ruff.exe` instead. Te
 
 ## Dataset and model limits
 
-The starter CSV contains **286 entirely synthetic rows**, with group-separated train/test splits. No private chat scraping or real scam-message dataset is included. Read [dataset provenance](backend/ml/data/README.md) before quoting metrics.
+The starter CSV contains **286 entirely synthetic rows**, with group-separated train/test splits. Expanded training uses its 204 train rows plus 90 new English/Hinglish/Hindi scenario texts: **294 training rows**. A new frozen evaluation has 48 texts in 16 scenario groups. No private chat scraping or real scam-message dataset is included. Read [dataset provenance](backend/ml/data/README.md) and [expanded evaluation](backend/ml/data/EVALUATION_V2.md) before quoting metrics.
 
-`make train` writes a git-ignored `backend/ml/model.joblib`. Restart the backend after training. Only load trusted team-produced model files: joblib/pickle can execute code. Historical synthetic benchmark numbers describe an earlier implementation, not current API performance or real-world accuracy. Do not tune repeatedly against the held-out split. New scores need an independently reviewed evaluation set.
+The expanded hybrid/API macro-F1 is **0.609** on that same-author synthetic slice, with promotion precision **1.000**, recall **0.333**, and **25/48 abstentions**. Raw model argmax scores higher but is not the API behavior. Small synthetic results are not real-world accuracy; missed promotions and Hinglish limitations remain.
+
+`make train` writes a git-ignored `backend/ml/model.joblib`. Restart the backend after training. Only load trusted team-produced model files: joblib/pickle can execute code. Historical synthetic benchmark numbers describe an earlier implementation, not current API performance or real-world accuracy. Do not tune repeatedly against the held-out split. The new slice was frozen before fitting but still needs independent review. Future changes based on it require a fresh evaluation set. Training no longer scores evaluation data automatically.
 
 ## Configuration and deployment
 
@@ -170,7 +173,7 @@ Defaults need no environment file. `.env.example` is a reference, not an automat
 | `TIPCHECK_MODEL_PATH` | Optional backend model file override; leave unset for default |
 | `TIPCHECK_CORS_ORIGINS` | Comma-separated allowed direct browser origins; empty by default |
 
-`npm run build` creates static assets but **does not include the Vite dev proxy**. Uploading `dist/` alone will not make the Python API work. FastAPI now serves a built `frontend/dist` and the `/api` aliases on one origin. See [deployment checklist](docs/DEPLOYMENT.md) for a tested local production command and concrete Render setup. No live hosting deployment has been created or verified.
+`npm run build` creates static assets but **does not include the Vite dev proxy**. Uploading `dist/` alone will not make the Python API work. FastAPI now serves a built `frontend/dist` and the `/api` aliases on one origin. Build the frontend and start FastAPI to serve the app on one origin; hosted deployment will be handled separately. No live hosting deployment has been created or verified.
 
 ## Privacy, safety and contribution
 

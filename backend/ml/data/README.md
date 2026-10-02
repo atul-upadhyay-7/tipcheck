@@ -13,6 +13,10 @@ Reference pages used for the patterns: https://investor.sebi.gov.in/spot-any-sca
 
 Regenerate with `python -m ml.build_dataset` (from `backend/`). It is seeded, so the output is stable.
 
+## Expanded training and evaluation (October 2)
+
+The starter CSV is preserved. `corpus.py` loads only its train partition plus 90 authored multilingual training texts from `overnight_train.json`. A new 48-text, 16-scenario evaluation lives in `overnight_eval.json`. Translations stay together. See [EVALUATION_V2.md](EVALUATION_V2.md) for counts, split limits, current per-class/language precision and recall, baseline comparison and reproduction. All new data is synthetic, same-author and not independently reviewed. `train.py` no longer evaluates held-out labels during fitting.
+
 ## Split
 
 `group_id` = the template or hand-written message a row came from. A group is only ever in `train` or `test`, never both (`train.py` asserts this). Test is about 29% of rows (82 rows, 45 promotion / 37 education).
