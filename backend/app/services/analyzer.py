@@ -34,7 +34,7 @@ def analyze(raw_text: str) -> dict:
     level = "high" if score >= 50 else "some" if score else "none_detected"
     label, scores = model.predict(text)
     if label is None:
-        label = "promotion" if rules.PROMO.search(text) and flags else "uncertain"
+        label = rules.fallback_label(text, flags)
     return {
         "label": label, "mode": model.mode(), "model_scores": scores,
         "risk_score": score, "risk_level": level, "flags": flags,

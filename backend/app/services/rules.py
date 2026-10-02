@@ -19,9 +19,23 @@ APP_SOURCE_RULES = {'apk', 'payment'}
 
 PROMO = re.compile(r'join|vip|dm\s+me|subscribe|buy\s+now|sell\s+now|target\s*\d|जुड़ें|खरीदो|बेचो|खरीदें', re.I)
 WARNING = re.compile(r'\b(beware|avoid|never|do\s+not|not\s+guaranteed|no\s+guaranteed)\b|सावधान|बचें|गारंटी\s+नहीं', re.I)
+EDU = re.compile(r'diversif|education(?:al)?\s+only|not\s+(?:an?\s+)?investment\s+(?:advice|recommendation)|can\s+lose\s+value|market\s+risk|learn\s+about|शिक्षा|जोखिम|निवेश\s+सलाह\s+नहीं', re.I)
 URL = re.compile(r'https?://[^\s<>]+')
 SENTENCE_SPLIT = re.compile(r'(?<=[.!?।])\s+|\n+')
 
 
 def source_for(rule_id: str) -> str:
     return SEBI_FAKE_APP if rule_id in APP_SOURCE_RULES else SEBI_SPOT_SCAM
+
+
+def fallback_label(text: str, flags: list) -> str:
+    """Rules-only verdict: promotion, education or uncertain."""
+    if flags and (rules_promo(text) or sum(f["weight"] for f in flags) >= 50):
+        return "promotion"
+    if not flags and EDU.search(text):
+        return "education"
+    return "uncertain"
+
+
+def rules_promo(text: str) -> bool:
+    return bool(PROMO.search(text))
