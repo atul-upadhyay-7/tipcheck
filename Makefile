@@ -1,7 +1,7 @@
-.PHONY: install backend frontend test build lint train
+.PHONY: install backend frontend test build lint train smoke
 
 install:
-	cd backend && python -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
+	cd backend && python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 	cd frontend && npm ci
 
 backend:
@@ -23,4 +23,4 @@ train:
 	cd backend && .venv/bin/python -m ml.train
 
 smoke:
-	python scripts/smoke.py
+	python3 scripts/smoke.py

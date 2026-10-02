@@ -25,6 +25,9 @@ export const STRINGS = {
     sebiResources: 'Official SEBI intermediary resources',
     urls: 'Detected URLs are shown as text only, not visited:',
     engine: 'Engine',
+    modes: { 'rules-only': 'Rules only', 'ml+rules': 'Rules + model' },
+    scoreNote: 'Heuristic red-flag score, not scam probability. Promotion does not mean fraud. No flags does not mean safe. Sources have not been verified.',
+    privacy: 'Remove personal details. Messages are not intentionally stored.',
     error: 'Check message length and backend connection.',
   },
   hi: {
@@ -53,6 +56,9 @@ export const STRINGS = {
     sebiResources: 'SEBI की आधिकारिक मध्यस्थ जानकारी',
     urls: 'मिले URL केवल टेक्स्ट में दिखाए गए हैं, खोले नहीं गए:',
     engine: 'इंजन',
+    modes: { 'rules-only': 'केवल नियम', 'ml+rules': 'नियम + मॉडल' },
+    scoreNote: 'यह नियमों पर आधारित चेतावनी स्कोर है, धोखाधड़ी की संभावना नहीं। प्रचार का मतलब धोखाधड़ी नहीं। कोई चेतावनी न मिलने का मतलब सुरक्षित नहीं। स्रोत सत्यापित नहीं किए गए हैं।',
+    privacy: 'निजी जानकारी हटाएं। संदेश जानबूझकर संग्रहित नहीं किए जाते।',
     error: 'संदेश की लंबाई और बैकएंड कनेक्शन जांचें।',
   },
 };

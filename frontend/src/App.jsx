@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { analyzeMessage } from './api/client.js';
 import ExampleList from './components/ExampleList.jsx';
 import Header from './components/Header.jsx';
@@ -14,26 +14,37 @@ export default function App() {
   const [error, setError] = useState(false);
   const [lang, setLang] = useState('en');
   const t = STRINGS[lang];
+  const requestId = useRef(0);
+
+  function changeText(value) {
+    requestId.current += 1;
+    setText(value);
+    setData(null);
+    setError(false);
+    setBusy(false);
+  }
 
   async function submit(e) {
     e.preventDefault();
+    const id = ++requestId.current;
     setBusy(true);
     setError(false);
     setData(null);
     try {
-      setData(await analyzeMessage(text));
+      const result = await analyzeMessage(text);
+      if (id === requestId.current) setData(result);
     } catch {
-      setError(true);
+      if (id === requestId.current) setError(true);
     } finally {
-      setBusy(false);
+      if (id === requestId.current) setBusy(false);
     }
   }
 
   return (
     <main>
       <Header lang={lang} onLangChange={setLang} t={t} />
-      <ExampleList onPick={(s) => { setText(s); setData(null); }} t={t} />
-      <MessageForm text={text} onTextChange={setText} onSubmit={submit} busy={busy} t={t} />
+      <ExampleList onPick={changeText} t={t} />
+      <MessageForm text={text} onTextChange={changeText} onSubmit={submit} busy={busy} t={t} />
       {error && <p role="alert">{t.error}</p>}
       {data && <ResultPanel data={data} lang={lang} t={t} />}
     </main>

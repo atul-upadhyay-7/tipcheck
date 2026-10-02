@@ -17,7 +17,9 @@ Regenerate with `python -m ml.build_dataset` (from `backend/`). It is seeded, so
 
 `group_id` = the template or hand-written message a row came from. A group is only ever in `train` or `test`, never both (`train.py` asserts this). Test is about 29% of rows (82 rows, 45 promotion / 37 education).
 
-## Results (honest version)
+## Results (historical baseline, before October 2 context fixes)
+
+The rule/context implementation has since changed. These numbers describe the earlier baseline, not the current API. New adversarial tests are regression tests, not an independent benchmark. See `docs/QUALITY_LOG.md` at the repository root.
 
 Train-only grouped CV macro-F1 for logistic regression: 0.90. Final held-out test, run once (`python -m ml.train`, then `python -m ml.evaluate`):
 

@@ -9,28 +9,29 @@ NOTE = ("Red-flag score, not scam probability. No flags does not mean safe. "
 
 
 def find_flags(text: str) -> tuple[list[dict], int]:
-    """Return (flags, suppressed_count). Sentences with warning language are not flagged."""
+    """Suppress local protective warnings, not later sales claims in mixed text."""
     flags: list[dict] = []
     suppressed = 0
     for sentence in rules.SENTENCE_SPLIT.split(text):
-        caution = bool(rules.WARNING.search(sentence))
         for rid, pattern, weight, en, hi in rules.RULES:
-            m = re.search(pattern, sentence, re.I)
-            if not m:
-                continue
-            if caution:
-                suppressed += 1
-                continue
-            if not any(f["id"] == rid for f in flags):
-                flags.append({"id": rid, "phrase": m.group(), "weight": weight,
-                              "en": en, "hi": hi, "source": rules.source_for(rid)})
+            for m in re.finditer(pattern, sentence, re.I):
+                prefix = sentence[max(0, m.start() - 70):m.start()]
+                local_context = prefix + m.group()
+                negated = re.search(r"(?:no|not|never)\s+$", prefix, re.I)
+                caution = bool(rules.WARNING.search(local_context))
+                if negated or (caution and not rules.active_promotion(prefix)):
+                    suppressed += 1
+                    continue
+                if not any(f["id"] == rid for f in flags):
+                    flags.append({"id": rid, "phrase": m.group(), "weight": weight,
+                                  "en": en, "hi": hi, "source": rules.source_for(rid)})
     return flags, suppressed
 
 
 def decide_label(rule_label: str, model_label):
-    """Rules lead. A rules 'promotion' always stands. Otherwise a confident model label is used;
-    when the model is absent or unsure, the rules label stands."""
-    if rule_label == "promotion" or model_label in (None, "uncertain"):
+    """Rules lead for both explicit pitches and protective education.
+    The model fills only uncertain cases; an unsure model preserves abstention."""
+    if rule_label in ("promotion", "education") or model_label in (None, "uncertain"):
         return rule_label
     return model_label
 

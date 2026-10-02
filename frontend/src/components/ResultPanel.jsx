@@ -7,7 +7,7 @@ export default function ResultPanel({ data, lang, t }) {
     <section aria-live="polite">
       <VerdictBadge label={data.label} t={t} />
       <RiskMeter score={data.risk_score} level={data.risk_level} t={t} />
-      <p><small>{t.engine}: {data.mode}. {data.note}</small></p>
+      <p><small>{t.engine}: {t.modes[data.mode] || data.mode}. {t.scoreNote}</small></p>
       {data.context_warning && <p>{t.context}</p>}
       <FlagList flags={data.flags} lang={lang} t={t} />
       <h3>{t.verifyTitle}</h3>

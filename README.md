@@ -66,3 +66,7 @@ A synthetic starter dataset is in `backend/ml/data/dataset.csv` (provenance and 
 ## Limits and privacy
 
 A low or empty red-flag score does not mean a message is safe. Links are not opened or verified. Do not paste real names, phone numbers, account details, OTPs or private messages. Use fictional examples for demos. Input is processed locally.
+
+## Prototype quality
+
+See [quality checks and known limits](docs/QUALITY_LOG.md) for the latest context fixes, desktop/mobile inspection and remaining team checks. Historical synthetic-data metrics are not real-world accuracy or current-API performance.
