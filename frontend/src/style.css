@@ -2,3 +2,7 @@ body{font:16px/1.55 system-ui,sans-serif;margin:0;background:#f4efec;color:#251f
 
 .verdict{border-radius:10px;padding:12px 16px;margin:16px 0;border:2px solid #aaa}.verdict h2{margin:4px 0 0}.verdict.promotion{background:#fdecea;border-color:#c0392b}.verdict.education{background:#e8f5ee;border-color:#28685b}.verdict.uncertain{background:#fff6e0;border-color:#c98a00}
 .meter{margin:16px 0}.meter-head{display:flex;justify-content:space-between;margin-bottom:6px}.meter-track{height:14px;background:#e6e0dd;border-radius:8px;overflow:hidden}.meter-fill{height:100%;border-radius:8px;transition:width .3s}.meter-fill.none_detected{background:#28685b}.meter-fill.some{background:#e0a100}.meter-fill.high{background:#c0392b}
+
+/* Untrusted pasted URLs and long tokens must not overflow a phone screen. */
+section li, section p, textarea{overflow-wrap:anywhere}
+button:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #28685b;outline-offset:3px}

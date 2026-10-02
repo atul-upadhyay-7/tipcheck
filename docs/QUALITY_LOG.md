@@ -11,6 +11,13 @@
 
 These are developer-authored regression cases, not an independent benchmark. No new accuracy claim is made. The earlier dataset metrics describe the previous hybrid implementation; rule/context changes mean they must not be presented as current-model performance. Keep the previous held-out split untouched rather than repeatedly tuning against it. A new independently reviewed test set is needed for a new score.
 
+## October 2 evening: demo reliability
+
+- API requests abort after 15 seconds instead of leaving the interface stuck. Bilingual failure copy tells the presenter to check the backend and retry.
+- Five Node-native client tests cover JSON requests, HTTP failures, offline errors, invalid JSON and a stalled-request abort. `make test` runs backend and frontend tests.
+- Example buttons now have meaningful English/Hindi names rather than numbers. Long untrusted URL text wraps on phones; keyboard focus is visible.
+- Browser regression checks cover every fictional demo seed, mobile long URLs, backend failure/retry and late-response protection. Desktop and 390px Hindi screenshots were visually inspected.
+
 ## Known limitations
 
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.

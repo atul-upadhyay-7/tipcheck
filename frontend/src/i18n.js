@@ -5,6 +5,7 @@ export const STRINGS = {
     language: 'Language',
     examples: 'Try a fictional example',
     example: 'Example',
+    exampleNames: ['Guaranteed returns', 'Scam warning', 'Diversification', 'Paid course', 'Hindi pressure tip', 'Market bulletin'],
     paste: 'Paste message',
     check: 'Check message',
     checking: 'Checking...',
@@ -28,7 +29,7 @@ export const STRINGS = {
     modes: { 'rules-only': 'Rules only', 'ml+rules': 'Rules + model' },
     scoreNote: 'Heuristic red-flag score, not scam probability. Promotion does not mean fraud. No flags does not mean safe. Sources have not been verified.',
     privacy: 'Remove personal details. Messages are not intentionally stored.',
-    error: 'Check message length and backend connection.',
+    error: 'Could not check this message. The request may have timed out. Check that the backend is running, then try again.',
   },
   hi: {
     tagline: 'किसी भी वित्तीय संदेश पर भरोसा करने से पहले रुककर जांचें।',
@@ -36,6 +37,7 @@ export const STRINGS = {
     language: 'भाषा',
     examples: 'एक काल्पनिक उदाहरण आज़माएं',
     example: 'उदाहरण',
+    exampleNames: ['पक्के मुनाफे का दावा', 'धोखाधड़ी से चेतावनी', 'विविधीकरण', 'सशुल्क कोर्स', 'हिन्दी दबाव वाली टिप', 'बाजार समाचार'],
     paste: 'संदेश चिपकाएं',
     check: 'संदेश जांचें',
     checking: 'जांच हो रही है...',
@@ -59,6 +61,6 @@ export const STRINGS = {
     modes: { 'rules-only': 'केवल नियम', 'ml+rules': 'नियम + मॉडल' },
     scoreNote: 'यह नियमों पर आधारित चेतावनी स्कोर है, धोखाधड़ी की संभावना नहीं। प्रचार का मतलब धोखाधड़ी नहीं। कोई चेतावनी न मिलने का मतलब सुरक्षित नहीं। स्रोत सत्यापित नहीं किए गए हैं।',
     privacy: 'निजी जानकारी हटाएं। संदेश जानबूझकर संग्रहित नहीं किए जाते।',
-    error: 'संदेश की लंबाई और बैकएंड कनेक्शन जांचें।',
+    error: 'संदेश की जांच नहीं हुई। अनुरोध का समय खत्म हो सकता है। बैकएंड चालू है या नहीं जांचें, फिर कोशिश करें।',
   },
 };
