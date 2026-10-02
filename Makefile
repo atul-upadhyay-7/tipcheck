@@ -21,3 +21,6 @@ build:
 
 train:
 	cd backend && .venv/bin/python -m ml.train
+
+smoke:
+	python scripts/smoke.py

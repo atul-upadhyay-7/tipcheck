@@ -12,7 +12,8 @@ backend/            FastAPI service
   ml/               train.py and data/ (optional classifier)
   tests/            pytest suite
 frontend/           React + Vite
-  src/              api/, components/, data/
+  src/              api/, components/, data/, i18n.js (English + Hindi UI text)
+scripts/smoke.py    end-to-end smoke test
 docs/ARCHITECTURE.md
 .github/workflows/  CI (lint, tests, build)
 ```
@@ -47,6 +48,8 @@ cd frontend && npm run build
 ```
 
 `make install`, `make test`, `make lint`, `make build` do the same.
+
+End-to-end check (backend and frontend dev servers running): `make smoke` posts sample tips through the Vite proxy and checks verdict and risk level.
 
 ## Optional ML model
 

@@ -20,11 +20,11 @@ React (Vite)  --POST /api/analyze-->  FastAPI  -->  analyzer
 | `services/model.py` | Loads the optional model; if absent the API runs in `rules-only` mode |
 | `ml/train.py` | Trains from `ml/data/dataset.csv` with group-aware splits; writes `ml/model.joblib` (git-ignored) |
 
-Risk level: `high` at score >= 50, `some` at 1-49, `none_detected` at 0. Model label is `uncertain` below 0.65 confidence.
+Risk level: `high` at score >= 50, `some` at 1-49, `none_detected` at 0. Model label is `uncertain` below 0.65 confidence. In rules-only mode the label is `promotion` (flags plus promo wording, or score >= 50), `education` (no flags and education wording) or `uncertain`.
 
 ## Frontend (`frontend/src`)
 
-`App.jsx` holds state. `api/client.js` is the only place that calls the backend. Components: `Header`, `ExampleList`, `MessageForm`, `ResultPanel`, `FlagList`. Hindi/English text is picked from each flag's `en`/`hi` field.
+`App.jsx` holds state. `api/client.js` is the only place that calls the backend. Components: `Header`, `ExampleList`, `MessageForm`, `ResultPanel`, `VerdictBadge`, `RiskMeter`, `FlagList`. All UI text lives in `i18n.js` (English and Hindi). Hindi/English text is picked from each flag's `en`/`hi` field.
 
 ## Privacy rules
 
