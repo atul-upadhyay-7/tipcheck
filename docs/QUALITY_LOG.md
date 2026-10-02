@@ -22,6 +22,10 @@ These are developer-authored regression cases, not an independent benchmark. No 
 
 Tailwind CSS, Motion and Lucide icons now support an original navy/teal workspace with flat surfaces, editorial headline, clear input/evidence separation and stacked mobile layout. No paid assets, copied React Bits components, WebGL, remote fonts or images. System reduced-motion preferences are respected. Developer checks exercised all demo examples, language switching, errors/retry and stale-response protection; actual desktop and Hindi mobile pixels were inspected after transitions settled. See UI_DESIGN.md and UI_LICENSE_NOTICES.md for sources and notices.
 
+## October 2: palette revision after user feedback
+
+Replaced rejected navy/teal colors with warm paper, near-black ink and terracotta. Removed pointer glow entirely. Preserved layout, bilingual content, motion preferences and guardrails. Settled desktop and Hindi phone screenshots inspected; full regression checks rerun. This is a visual change, not a new analyzer or accuracy claim.
+
 ## Known limitations
 
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.
