@@ -21,7 +21,7 @@ Frontend (terminal 2, project root):
 
 ```bash
 cd frontend
-npm ci
+npm install
 npm run dev
 ```
 
