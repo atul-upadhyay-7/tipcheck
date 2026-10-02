@@ -1,6 +1,7 @@
 """FastAPI entrypoint. Run from backend/: uvicorn app.main:app --reload"""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from . import config
 from .api.routes import router
@@ -12,7 +13,11 @@ def create_app() -> FastAPI:
     if config.CORS_ORIGINS:
         app.add_middleware(CORSMiddleware, allow_origins=config.CORS_ORIGINS,
                            allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
-    app.include_router(router)
+    app.include_router(router)  # Existing local/dev endpoints remain compatible.
+    app.include_router(router, prefix="/api", include_in_schema=False)
+    if config.FRONTEND_DIST.is_dir():
+        # Mount last: /api and /docs must never be swallowed by static handling.
+        app.mount("/", StaticFiles(directory=config.FRONTEND_DIST, html=True), name="frontend")
     return app
 
 

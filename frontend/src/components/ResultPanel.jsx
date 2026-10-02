@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ShieldQuestion, ExternalLink, Link2 } from "lucide-react";
+import LiteracyCoach from "./LiteracyCoach.jsx";
 import FlagList from "./FlagList.jsx";
 import RiskMeter from "./RiskMeter.jsx";
 import VerdictBadge from "./VerdictBadge.jsx";
@@ -42,6 +43,7 @@ export default function ResultPanel({ data, lang, t }) {
           <ExternalLink size={14} />
         </a>
       </div>
+      <LiteracyCoach data={data} lang={lang} t={t} />
       {data.links.length > 0 && (
         <div className="detected-links">
           <h3>

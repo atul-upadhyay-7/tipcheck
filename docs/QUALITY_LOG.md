@@ -30,6 +30,14 @@ Replaced rejected navy/teal colors with warm paper, near-black ink and terracott
 
 Phone checks now focus and scroll to the new analysis, rather than leaving results below a long input panel. Language switching updates the document language for assistive tools. The untouched empty panel says nothing has been checked, rather than reporting no flags. Darkened borderline footer text contrast. An axe automated check on the Hindi phone result reported no violations after the fix; this is not a full accessibility certification. All normal regression checks and settled screenshots were checked again.
 
+## October 2: result-based literacy coach and documentation
+
+Added an opt-in bilingual three-question coach: matched warning phrase (or no-signal limits), heuristic-score meaning and independent identity checking. Feedback uses the current result's explanation and fixed official links, with no answer storage or safety certificate. Two lesson-builder tests plus browser flows check wrong/right answers, completion, Hindi, reset and no-flags cases. No learning-impact claim is made without a user study. README now covers verified setup, file architecture, demo path, API flow, model/data limits, configuration, privacy and contribution. Architecture doc corrected to match current rule precedence.
+
+## Tonight freeze: single-service deployment path
+
+FastAPI now serves a built frontend and /api aliases on the same origin, removing production dependence on the Vite dev proxy. Two route/static tests added. Local production server on port 8001 passed proxy-free smoke and English/Hindi coach flows; actual production screenshots inspected. Added a platform-neutral checklist and a Render candidate with verified official limits. No cloud service or account was created and no public deployment has been verified. Final count: 33 backend + 7 frontend tests.
+
 ## Known limitations
 
 Regexes do not understand all quotation, sarcasm, mixed contexts or negation. Unknown wording can be missed. Training data is synthetic and the model is not calibrated. URLs are displayed as text, not fetched, and neither claims nor identities are verified. No flags never means safe.
