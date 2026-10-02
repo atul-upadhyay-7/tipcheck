@@ -1,0 +1,21 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+# Generated model and local data
+backend/ml/model.joblib
+*.joblib
+backend/ml/data/*.local.csv
+# Node
+node_modules/
+frontend/dist/
+# Env and OS
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
