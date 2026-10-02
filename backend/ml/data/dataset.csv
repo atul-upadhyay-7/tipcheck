@@ -1,0 +1,287 @@
+text,label,group_id,split,source
+"Guaranteed 30% returns in 10 days on an upcoming IPO. Enter the VIP group today, pay Rs 499 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 20% returns in 10 days on Nifty. Enter our VIP group now, pay Rs 2999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 200% returns in 30 days on this penny stock. Join our VIP group today, pay Rs 4999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 40% returns in 10 days on a small-cap stock. Join our VIP group today, pay Rs 999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 40% returns in 3 days on this penny stock. Join our VIP group today, pay Rs 4999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 50% returns in 15 days on an upcoming IPO. Join our VIP group now, pay Rs 2999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 100% returns in 10 days on crypto. Join the VIP group now, pay Rs 1500 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 30% returns in 10 days on an upcoming IPO. Enter our VIP group today, pay Rs 2999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 40% returns in 30 days on an upcoming IPO. Join our VIP group today, pay Rs 1500 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 200% returns in 30 days on options trading. Enter our VIP group today, pay Rs 499 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 200% returns in 10 days on crypto. Enter the VIP group today, pay Rs 1500 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 30% returns in 30 days on crypto. Join the VIP group today, pay Rs 999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 30% returns in 10 days on crypto. Enter our VIP group today, pay Rs 4999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Guaranteed 20% returns in 5 days on a small-cap stock. Enter our VIP group now, pay Rs 999 to start.",promotion,g_p0,train,template_generated_synthetic
+"Nifty: sure shot call, buy now, target in 10 days. Subscribe for Rs 4999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"Nifty: sure shot call, buy now, target in 30 days. Register for Rs 4999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"Bank Nifty: sure shot call, buy now, target in 10 days. Register for Rs 999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"an upcoming IPO: sure shot call, buy now, target in 3 days. Register for Rs 499 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"an upcoming IPO: sure shot call, buy now, target in 3 days. Subscribe for Rs 499 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"Bank Nifty: sure shot call, buy now, target in 7 days. Subscribe for Rs 1500 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"an upcoming IPO: sure shot call, buy now, target in 30 days. Register for Rs 4999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"crypto: sure shot call, buy now, target in 7 days. Subscribe for Rs 999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"this penny stock: sure shot call, buy now, target in 10 days. Subscribe for Rs 999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"options trading: sure shot call, buy now, target in 5 days. Subscribe for Rs 4999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"an upcoming IPO: sure shot call, buy now, target in 5 days. Register for Rs 499 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"Nifty: sure shot call, buy now, target in 30 days. Subscribe for Rs 1500 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"this penny stock: sure shot call, buy now, target in 5 days. Subscribe for Rs 2999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"gold ETF: sure shot call, buy now, target in 3 days. Register for Rs 999 and get daily calls.",promotion,g_p1,train,template_generated_synthetic
+"Double ythe money with a small-cap stock in 15 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double ythe money with Bank Nifty in 30 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double ythe money with crypto in 5 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with options trading in 15 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with Nifty in 5 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with intraday trading in 7 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with this penny stock in 3 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with intraday trading in 15 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double ythe money with this penny stock in 3 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with an upcoming IPO in 7 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double your money with this penny stock in 30 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Double ythe money with Bank Nifty in 5 days. Limited seats, pay first and we send the details.",promotion,g_p2,test,template_generated_synthetic
+"Insider tip on gold ETF. Our operator confirmed 200% profit. Enter the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on Nifty. Our operator confirmed 200% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on this penny stock. Our operator confirmed 20% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on a small-cap stock. Our operator confirmed 20% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on crypto. Our operator confirmed 100% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on Nifty. Our operator confirmed 20% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on gold ETF. Our operator confirmed 200% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on an upcoming IPO. Our operator confirmed 30% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on crypto. Our operator confirmed 50% profit. Enter the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on this penny stock. Our operator confirmed 200% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on intraday trading. Our operator confirmed 40% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on options trading. Our operator confirmed 40% profit. Enter the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on Nifty. Our operator confirmed 50% profit. Join the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Insider tip on gold ETF. Our operator confirmed 40% profit. Enter the premium channel, last chance.",promotion,g_p3,train,template_generated_synthetic
+"Assured 200% profit from intraday trading. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 20% profit from this penny stock. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 200% profit from Nifty. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 20% profit from intraday trading. Download the APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 30% profit from this penny stock. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 20% profit from options trading. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 50% profit from crypto. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 20% profit from this penny stock. Download the APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 40% profit from intraday trading. Download the APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 200% profit from options trading. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 40% profit from Nifty. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Assured 20% profit from an upcoming IPO. Download our APK and deposit now, withdraw anytime.",promotion,g_p4,train,template_generated_synthetic
+"Daily profit from Nifty, no risk. Pay Rs 499 now and the analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from intraday trading, no risk. Pay Rs 1500 today and our expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from intraday trading, no risk. Pay Rs 499 today and our expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from crypto, no risk. Pay Rs 4999 today and the expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from crypto, no risk. Pay Rs 999 today and the analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from this penny stock, no risk. Pay Rs 4999 today and our analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from this penny stock, no risk. Pay Rs 999 now and the expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from Nifty, no risk. Pay Rs 2999 today and our analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from crypto, no risk. Pay Rs 999 today and our analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from this penny stock, no risk. Pay Rs 2999 today and our analyst will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from gold ETF, no risk. Pay Rs 4999 now and our expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from options trading, no risk. Pay Rs 499 now and the expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Daily profit from a small-cap stock, no risk. Pay Rs 4999 today and the expert will handle your trades.",promotion,g_p5,test,template_generated_synthetic
+"Abhi join karo: this penny stock me 50% pakka profit 7 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: an upcoming IPO me 200% pakka profit 5 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: Nifty me 20% pakka profit 5 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: an upcoming IPO me 30% pakka profit 10 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: crypto me 200% pakka profit 15 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: this penny stock me 40% pakka profit 7 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: Nifty me 100% pakka profit 5 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: a small-cap stock me 50% pakka profit 10 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: intraday trading me 200% pakka profit 10 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: Bank Nifty me 20% pakka profit 3 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: gold ETF me 40% pakka profit 7 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: an upcoming IPO me 40% pakka profit 30 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: Nifty me 50% pakka profit 3 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Abhi join karo: Nifty me 40% pakka profit 30 din me. Pehle paise bhejo, seats limited.",promotion,g_p6,train,template_generated_synthetic
+"Bank Nifty secret formula revealed. Members made 20% in 5 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"gold ETF secret formula revealed. Members made 50% in 5 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"this penny stock secret formula revealed. Members made 40% in 7 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"this penny stock secret formula revealed. Members made 50% in 3 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"Bank Nifty secret formula revealed. Members made 40% in 15 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"a small-cap stock secret formula revealed. Members made 50% in 10 days. Act now, join now.",promotion,g_p7,train,template_generated_synthetic
+"crypto secret formula revealed. Members made 40% in 7 days. Act now, join now.",promotion,g_p7,train,template_generated_synthetic
+"this penny stock secret formula revealed. Members made 30% in 7 days. Act now, join now.",promotion,g_p7,train,template_generated_synthetic
+"Bank Nifty secret formula revealed. Members made 200% in 10 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"Nifty secret formula revealed. Members made 40% in 5 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"intraday trading secret formula revealed. Members made 30% in 10 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"an upcoming IPO secret formula revealed. Members made 30% in 3 days. Act now, join now.",promotion,g_p7,train,template_generated_synthetic
+"this penny stock secret formula revealed. Members made 20% in 7 days. Act now, join now.",promotion,g_p7,train,template_generated_synthetic
+"intraday trading secret formula revealed. Members made 50% in 3 days. Act now, join today.",promotion,g_p7,train,template_generated_synthetic
+"Our team called a small-cap stock before the jump. Next call goes out tonight, Rs 1500 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called an upcoming IPO before the jump. Next call goes out tonight, Rs 499 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called this penny stock before the jump. Next call goes out tonight, Rs 999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called a small-cap stock before the jump. Next call goes out tonight, Rs 499 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called an upcoming IPO before the jump. Next call goes out tonight, Rs 999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called options trading before the jump. Next call goes out tonight, Rs 999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called gold ETF before the jump. Next call goes out tonight, Rs 4999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called this penny stock before the jump. Next call goes out tonight, Rs 4999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called this penny stock before the jump. Next call goes out tonight, Rs 499 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called gold ETF before the jump. Next call goes out tonight, Rs 2999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called options trading before the jump. Next call goes out tonight, Rs 499 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+"Our team called Bank Nifty before the jump. Next call goes out tonight, Rs 2999 gets you in the paid group.",promotion,g_p8,train,template_generated_synthetic
+Earn 30% in 5 days with Bank Nifty. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 20% in 7 days with this penny stock. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 40% in 15 days with a small-cap stock. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 50% in 5 days with a small-cap stock. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 20% in 30 days with intraday trading. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 100% in 30 days with crypto. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 20% in 10 days with an upcoming IPO. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 200% in 3 days with an upcoming IPO. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 30% in 10 days with Nifty. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 40% in 15 days with intraday trading. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 30% in 3 days with a small-cap stock. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 50% in 7 days with crypto. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 200% in 10 days with intraday trading. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+Earn 20% in 3 days with a small-cap stock. Send money to my personal account and I will trade for you.,promotion,g_p9,test,template_generated_synthetic
+"Free demo, then 200% profit guarantee on intraday trading. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 200% profit guarantee on options trading. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 30% profit guarantee on a small-cap stock. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 200% profit guarantee on crypto. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 200% profit guarantee on crypto. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 200% profit guarantee on a small-cap stock. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 50% profit guarantee on intraday trading. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 30% profit guarantee on crypto. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 40% profit guarantee on a small-cap stock. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 20% profit guarantee on Nifty. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 20% profit guarantee on gold ETF. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 200% profit guarantee on Bank Nifty. Install this app, limited offer, join now.",promotion,g_p10,train,template_generated_synthetic
+"Free demo, then 50% profit guarantee on an upcoming IPO. Install this app, limited offer, join today.",promotion,g_p10,train,template_generated_synthetic
+"options trading carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"gold ETF carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"a small-cap stock carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"this penny stock carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"Bank Nifty carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"Nifty carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"intraday trading carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"crypto carries risk and returns are not guaranteed. This is general education, not a recommendation.",education,g_e0,test,template_generated_synthetic
+"How does this penny stock work? Prices move with demand and supply, and you can lose part or all of ythe money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does gold ETF work? Prices move with demand and supply, and you can lose part or all of your money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does a small-cap stock work? Prices move with demand and supply, and you can lose part or all of ythe money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does Nifty work? Prices move with demand and supply, and you can lose part or all of your money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does intraday trading work? Prices move with demand and supply, and you can lose part or all of your money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does this penny stock work? Prices move with demand and supply, and you can lose part or all of your money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does crypto work? Prices move with demand and supply, and you can lose part or all of ythe money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does crypto work? Prices move with demand and supply, and you can lose part or all of your money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does an upcoming IPO work? Prices move with demand and supply, and you can lose part or all of ythe money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"How does Nifty work? Prices move with demand and supply, and you can lose part or all of ythe money. Read the offer documents first.",education,g_e1,train,template_generated_synthetic
+"A beginner note on this penny stock: start small, spread your money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+"A beginner note on Bank Nifty: start small, spread your money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+"A beginner note on a small-cap stock: start small, spread ythe money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+"A beginner note on options trading: start small, spread your money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+"A beginner note on an upcoming IPO: start small, spread your money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+"A beginner note on crypto: start small, spread your money across assets, and never invest money you cannot afford to lose.",education,g_e2,train,template_generated_synthetic
+Be careful if anyone promises 50% returns from a small-cap stock in 3 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 20% returns from intraday trading in 3 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 50% returns from a small-cap stock in 10 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 20% returns from Nifty in 30 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 200% returns from crypto in 15 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 200% returns from a small-cap stock in 3 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 200% returns from Nifty in 3 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 50% returns from options trading in 30 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 50% returns from gold ETF in 10 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 100% returns from an upcoming IPO in 30 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 50% returns from gold ETF in 30 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 40% returns from crypto in 10 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Be careful if anyone promises 40% returns from a small-cap stock in 15 days. Genuine investments cannot promise that. Check registration on the SEBI website.,education,g_e3,test,template_generated_synthetic
+Class notes: risk and return in this penny stock. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in gold ETF. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in crypto. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in options trading. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in intraday trading. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in Nifty. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in Bank Nifty. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Class notes: risk and return in a small-cap stock. Higher possible returns usually come with higher possible losses. Not investment advice.,education,g_e4,train,template_generated_synthetic
+Awareness: fraudsters push this penny stock with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push Bank Nifty with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push a small-cap stock with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push gold ETF with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push Nifty with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push an upcoming IPO with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+Awareness: fraudsters push options trading with pay first and act now messages. Do not pay anyone for sure shot calls.,education,g_e5,train,template_generated_synthetic
+"Learn about an upcoming IPO: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about intraday trading: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about crypto: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about options trading: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about this penny stock: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about gold ETF: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+"Learn about Bank Nifty: what it is, who regulates it, and what fees apply. We do not give buy or sell tips.",education,g_e6,train,template_generated_synthetic
+Market update: crypto moved now. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: gold ETF moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: this penny stock moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: this penny stock moved now. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: a small-cap stock moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: Bank Nifty moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: crypto moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: options trading moved now. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: an upcoming IPO moved now. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: Nifty moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Market update: intraday trading moved today. This summary is informational and is not an investment recommendation.,education,g_e7,test,template_generated_synthetic
+Exam prep: define Bank Nifty and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Exam prep: define this penny stock and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Exam prep: define crypto and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Exam prep: define intraday trading and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Exam prep: define Nifty and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Exam prep: define gold ETF and list two risks. Remember past performance does not predict future results.,education,g_e8,train,template_generated_synthetic
+Our research desk explains this penny stock in plain language. No promises of 20% or any return; markets can fall for 5 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains Bank Nifty in plain language. No promises of 40% or any return; markets can fall for 15 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains intraday trading in plain language. No promises of 30% or any return; markets can fall for 10 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains a small-cap stock in plain language. No promises of 30% or any return; markets can fall for 30 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains this penny stock in plain language. No promises of 30% or any return; markets can fall for 7 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains options trading in plain language. No promises of 100% or any return; markets can fall for 5 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains options trading in plain language. No promises of 100% or any return; markets can fall for 7 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains intraday trading in plain language. No promises of 20% or any return; markets can fall for 15 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains Nifty in plain language. No promises of 50% or any return; markets can fall for 30 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains Bank Nifty in plain language. No promises of 100% or any return; markets can fall for 7 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains gold ETF in plain language. No promises of 40% or any return; markets can fall for 7 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains crypto in plain language. No promises of 30% or any return; markets can fall for 3 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains options trading in plain language. No promises of 30% or any return; markets can fall for 10 days or longer.,education,g_e9,train,template_generated_synthetic
+Our research desk explains this penny stock in plain language. No promises of 200% or any return; markets can fall for 30 days or longer.,education,g_e9,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in Nifty, check who is asking and why. Fees of Rs 999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in an upcoming IPO, check who is asking and why. Fees of Rs 1500 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in Bank Nifty, check who is asking and why. Fees of Rs 999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in this penny stock, check who is asking and why. Fees of Rs 499 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in options trading, check who is asking and why. Fees of Rs 999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in Nifty, check who is asking and why. Fees of Rs 1500 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in a small-cap stock, check who is asking and why. Fees of Rs 4999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in a small-cap stock, check who is asking and why. Fees of Rs 999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in crypto, check who is asking and why. Fees of Rs 2999 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Reminder from the investor helpline: before you put money in options trading, check who is asking and why. Fees of Rs 1500 paid to unknown people are a warning sign.",education,g_e10,train,template_generated_synthetic
+"Join our VIP group today. Guaranteed 40% profit in 10 days, only 20 seats left!",promotion,h_p1,train,hand_written_synthetic
+"Sure shot call: buy XYZ at 52, target 80 by Friday. DM me to get the full list.",promotion,h_p2,test,hand_written_synthetic
+Our SEBI registered expert gives 100% accurate calls. Pay Rs 999 and start earning daily profit.,promotion,h_p3,train,hand_written_synthetic
+"Operator call tomorrow, insider information from inside the company. Join the premium channel now.",promotion,h_p4,train,hand_written_synthetic
+"Download our APK to trade with 5x leverage. Assured returns, withdraw anytime.",promotion,h_p5,test,hand_written_synthetic
+"Hello sir, I am from a research team. Add 50k and we will double your money in one month.",promotion,h_p6,test,hand_written_synthetic
+"Abhi join karo, pakka profit milega. Limited seats, pehle paise bhejo aur call lo.",promotion,h_p7,train,hand_written_synthetic
+"पक्का मुनाफा! हमारे VIP ग्रुप से जुड़ें, आज ही जुड़ें और पैसा दोगुना करें।",promotion,h_p8,test,hand_written_synthetic
+"Our AI trading bot made 300% last month. Subscribe now, spots are filling fast.",promotion,h_p9,train,hand_written_synthetic
+Mutual fund guru reveals secret formula for 25% monthly returns. Buy the course today.,promotion,h_p10,train,hand_written_synthetic
+"Last chance to enter the IPO allotment group. Send money first, allotment guaranteed.",promotion,h_p11,test,hand_written_synthetic
+"Free tips today, premium tips tomorrow. Sell now, target 3 hit yesterday, join channel for more.",promotion,h_p12,test,hand_written_synthetic
+"Our members are already up big this month. The next batch of the paid group opens tonight, message me.",promotion,h_p13,train,hand_written_synthetic
+Screenshot of yesterday's profit attached. Want the same calls? Subscribe to the private channel.,promotion,h_p14,train,hand_written_synthetic
+"This stock is about to explode, buy before the news is out. Join our channel to see the exit price.",promotion,h_p15,train,hand_written_synthetic
+Retire early with our signals. Pay the one-time fee and we will send the entry and exit levels daily.,promotion,h_p16,train,hand_written_synthetic
+"Expert call: buy now, sell on target. Only subscribers get the stop loss. Subscribe today.",promotion,h_p17,train,hand_written_synthetic
+A friend of mine made lakhs from this app. Install it and I will guide you step by step.,promotion,h_p18,train,hand_written_synthetic
+A mutual fund pools money from many investors. Returns depend on the market and are not guaranteed.,education,h_e1,test,hand_written_synthetic
+Diversification means spreading money across different assets so one loss hurts less. Investments can lose value.,education,h_e2,train,hand_written_synthetic
+An SIP lets you invest a fixed amount every month. It does not remove market risk.,education,h_e3,test,hand_written_synthetic
+The P/E ratio compares a share price to its earnings per share. Compare it with similar companies.,education,h_e4,train,hand_written_synthetic
+"Before investing, check whether the adviser is registered on the SEBI website.",education,h_e5,train,hand_written_synthetic
+"An index fund tracks a market index such as the Nifty 50. Fees are usually low, returns still move with the market.",education,h_e6,train,hand_written_synthetic
+Inflation reduces what your money can buy. Many people keep an emergency fund in a savings account.,education,h_e7,test,hand_written_synthetic
+Today the market closed higher. This report is not an investment recommendation.,education,h_e8,test,hand_written_synthetic
+म्यूचुअल फंड कई निवेशकों का पैसा मिलाकर निवेश करता है। रिटर्न की कोई गारंटी नहीं होती।,education,h_e9,train,hand_written_synthetic
+निवेश से पहले जोखिम समझें और अलग अलग जगह पैसा लगाएं। यह निवेश सलाह नहीं है।,education,h_e10,train,hand_written_synthetic
+A stop-loss order sells a share when it falls to a price you set. It can still fill below that price in a fast market.,education,h_e11,train,hand_written_synthetic
+Compound interest means you earn returns on your earlier returns. Starting early helps over long periods.,education,h_e12,train,hand_written_synthetic
+Beware of guaranteed returns. Never transfer money to an unknown person.,education,h_e13,train,hand_written_synthetic
+SEBI warns: no one can promise assured returns in the stock market. Do not pay anyone for sure shot tips.,education,h_e14,train,hand_written_synthetic
+Fake trading apps often ask you to download an APK. Install apps only from official stores.,education,h_e15,train,hand_written_synthetic
+Scammers say act now and limited seats to rush you. Take time and check the offer independently.,education,h_e16,train,hand_written_synthetic
+"Join our paid course about diversification. Education only, no guaranteed returns.",education,h_e17,train,hand_written_synthetic
+"Webinar for beginners on how mutual funds work. Free to attend, not investment advice, no tips will be given.",education,h_e18,train,hand_written_synthetic
+सावधान रहें: पक्का मुनाफा या पैसा दोगुना करने का वादा अक्सर धोखा होता है।,education,h_e19,train,hand_written_synthetic
+Our newsletter explains market basics each week. We do not give buy or sell calls. Investments are subject to market risk.,education,h_e20,train,hand_written_synthetic
+"Insider information is illegal to trade on. If someone offers secret tips, report it and do not pay.",education,h_e21,test,hand_written_synthetic
+A registration number in a message can be copied. Verify the adviser on the official SEBI site first.,education,h_e22,train,hand_written_synthetic
