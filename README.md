@@ -152,7 +152,7 @@ npm run build
 python3 scripts/smoke.py
 ```
 
-Windows uses `.venv\Scripts\python.exe` and `.venv\Scripts\ruff.exe` instead. Tests are developer regressions, not an independent accuracy benchmark. Screenshot checks and an automated accessibility check cover selected states, not every device or full accessibility certification. See [quality log](docs/QUALITY_LOG.md).
+Windows uses `.venv\Scripts\python.exe` and `.venv\Scripts\ruff.exe` instead. CI also runs frontend tests and a freshly trained-model API smoke. Tests are developer regressions, not an independent accuracy benchmark. Screenshot checks and an automated accessibility check cover selected states, not every device or full accessibility certification. See [quality log](docs/QUALITY_LOG.md).
 
 ## Dataset and model limits
 

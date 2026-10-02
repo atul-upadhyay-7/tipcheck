@@ -31,7 +31,7 @@ Raw argmax is an experiment, **not how the API labels text**. Abstentions count 
 | Education | 0.933 | 0.583 | 24 |
 | Promotion | 1.000 | 0.333 | 24 |
 
-Hybrid coverage is 23/48 (47.9%). It misses or abstains on two thirds of promotions. One education example is labeled promotion. No predicted promotion was false on this small synthetic set, which does **not** establish zero false-positive risk.
+Hybrid coverage is 23/48 (47.9%). It misses or abstains on two thirds of promotions. One promotion example is labeled education. No predicted promotion was false on this small synthetic set, which does **not** establish zero false-positive risk.
 
 | Language | Hybrid macro-F1 | Education recall | Promotion recall | Abstentions / 16 |
 | --- | ---: | ---: | ---: | ---: |

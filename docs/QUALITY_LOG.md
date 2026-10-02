@@ -53,3 +53,7 @@ User requested removal of the standalone deployment guide after the previous pus
 ## Validation privacy hardening
 
 Rejected input can contain personal information. Replaced the default FastAPI/Pydantic error serialization with location/message/type only; no raw input or error context is echoed. Added over-limit private-marker and malformed-JSON regressions. Backend now 39 tests, frontend 7. This does not promise that a hosting provider never logs data; no request-body logging was added.
+
+## Overnight automation review
+
+CI now runs frontend unit tests (previously build only), plus a fresh model training and ml+rules API smoke job. Smoke requests have finite timeouts and an optional bounded startup wait/mode assertion. These commands pass locally; GitHub Actions execution must be checked separately after push. Corrected evaluation prose direction: the confusion matrix has one promotion predicted education, not education predicted promotion. No metrics, threshold or rules changed.
