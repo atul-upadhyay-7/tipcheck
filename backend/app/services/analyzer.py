@@ -27,14 +27,21 @@ def find_flags(text: str) -> tuple[list[dict], int]:
     return flags, suppressed
 
 
+def decide_label(rule_label: str, model_label):
+    """Rules lead. A rules 'promotion' always stands. Otherwise a confident model label is used;
+    when the model is absent or unsure, the rules label stands."""
+    if rule_label == "promotion" or model_label in (None, "uncertain"):
+        return rule_label
+    return model_label
+
+
 def analyze(raw_text: str) -> dict:
     text = unicodedata.normalize("NFKC", raw_text).strip()
     flags, suppressed = find_flags(text)
     score = min(100, sum(f["weight"] for f in flags))
     level = "high" if score >= 50 else "some" if score else "none_detected"
-    label, scores = model.predict(text)
-    if label is None:
-        label = rules.fallback_label(text, flags)
+    model_label, scores = model.predict(text)
+    label = decide_label(rules.fallback_label(text, flags), model_label)
     return {
         "label": label, "mode": model.mode(), "model_scores": scores,
         "risk_score": score, "risk_level": level, "flags": flags,

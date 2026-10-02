@@ -20,3 +20,11 @@ def test_neutral_education_has_no_flags():
 def test_sources_are_sebi():
     assert source_for("apk").startswith("https://investor.sebi.gov.in/")
     assert source_for("guarantee").startswith("https://investor.sebi.gov.in/")
+
+
+def test_decide_label_rules_lead_and_model_fills_gaps():
+    from app.services.analyzer import decide_label
+    assert decide_label("promotion", "education") == "promotion"
+    assert decide_label("uncertain", "education") == "education"
+    assert decide_label("uncertain", "uncertain") == "uncertain"
+    assert decide_label("education", None) == "education"

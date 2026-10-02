@@ -51,3 +51,8 @@ def test_education_message_gets_education_label_in_rules_mode():
 def test_paid_course_with_disclaimer_is_not_flagged_as_scam():
     r = client.post("/analyze", json={"text": "Join our paid course about diversification. Education only, no guaranteed returns."}).json()
     assert r["risk_score"] == 0
+
+
+def test_model_files_are_optional():
+    # The API must answer whether or not ml/model.joblib exists.
+    assert client.post("/analyze", json={"text": "Guaranteed returns, join VIP now"}).status_code == 200
