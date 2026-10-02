@@ -53,7 +53,7 @@ End-to-end check (backend and frontend dev servers running): `make smoke` posts 
 
 ## Optional ML model
 
-Add the team dataset at `backend/ml/data/dataset.csv` (see `backend/ml/data/README.md`), then `make train`. Without a model the API runs in `rules-only` mode.
+A synthetic starter dataset is in `backend/ml/data/dataset.csv` (provenance and honest test scores in `backend/ml/data/README.md`). Train with `make train`, check with `cd backend && python -m ml.evaluate`. The model file is not committed; without it the API runs in `rules-only` mode. With it, rules lead and the model fills the gaps (hybrid test macro-F1 0.81 on synthetic held-out templates; treat it as a baseline).
 
 ## Team working agreement
 

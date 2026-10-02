@@ -39,3 +39,7 @@ Add a tuple to `RULES` in `services/rules.py` with both English and Hindi text, 
 ## Known limits
 
 Rules and the model are illustrative. No flags does not mean a message is safe. No registration or financial claim is verified.
+
+## Verdict logic
+
+Rules lead. If the rules say `promotion`, that stands. Otherwise a confident model label (>= 0.65) is used. If the model is missing or unsure, the rules label stands (`promotion`, `education` or `uncertain`). See `decide_label` in `services/analyzer.py`. `ml/evaluate.py` scores rules-only, model-only and hybrid on the held-out split.
