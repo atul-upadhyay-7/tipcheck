@@ -53,3 +53,70 @@ def test_payout_signal_deduplicated_and_weights_capped(monkeypatch):
     result = analyzer.analyze('Invest 499 I give you 1600. Pay 500 I give you 2000. Guaranteed returns, limited seats, pay first.')
     assert sum(f['id'] == 'amount_payout' for f in result['flags']) == 1
     assert result['risk_score'] == 100
+
+
+@pytest.mark.parametrize('text', [
+    'Invest\n499\nand\nI\nwill\ngive\nyou\n1500\nin just 3 hour',
+    'Inve\u200bst 499 and I\u200b will give you 1500 in just 3 hour',
+    '💵𝐈𝐍𝐕𝐄𝐒𝐓💰499💎AND💸GET💰1,500/-',
+    'Invest 499 and get 1500',
+    '₹1000/- AND GET 9,000/-',
+    '₹2000/- AND GET 18,000/-',
+    '₹3000/- AND GET 30,000/-',
+    '₹5,000/- AND GET 50,000/-',
+    '₹10,000/- AND GET 1,20,000/-',
+    '₹15,000/- AND GET 1,50,000/-',
+    '₹20,000/- AND GET 2,00,000/-',
+    '₹30,000/- AND GET 2,50,000/-',
+    '₹35,000/- AND GET 3,00,000/-',
+])
+def test_decorated_and_slot_payouts(monkeypatch, text):
+    monkeypatch.setattr(model, '_model', None)
+    result = analyzer.analyze(text)
+    assert result['risk_score'] == 60
+    assert result['label'] == 'promotion'
+    assert result['flags'][0]['id'] == 'amount_payout'
+
+
+def test_exact_telegram_message(monkeypatch):
+    from pathlib import Path
+
+    from app.services import rules
+    text = Path(__file__).with_name('fixtures').joinpath('telegram_payout.txt').read_text()
+    monkeypatch.setattr(model, '_model', None)
+    result = analyzer.analyze(text)
+    assert (result['risk_score'], result['risk_level'], result['label']) == (60, 'high', 'promotion')
+    assert len(result['flags']) == 1  # One signal, not nine charges for repeating it.
+    claims = list(rules.amount_payout_claims(rules.payout_matching_text(text)))
+    assert len(claims) == 9
+    assert all(not caution for _, caution in claims)
+
+
+@pytest.mark.parametrize('text', [
+    'Beware of this offer:\n₹1000/- AND GET 9,000/-\n₹2000/- AND GET 18,000/-',
+    'Scam awareness example:\n₹1000/- AND GET 9,000/-',
+    'Math exercise: Invest\n499 and get 1500',
+    'Do not invest\n499 and get 1500',
+    '₹1000/- AND GET 900/-',
+    '₹1000/- AND GET 1500/-',
+    '₹1000/- AND GET 9000 reward points',
+    '₹1000/- AND GET 9000 shares',
+    'Invest 1000 in an index fund, get 9000 over many years.',
+    'My budget: ₹1000 groceries, ₹9000 rent.',
+    'Bought for ₹1000 and get ₹9000 as a salary next month.',
+    'Invest 1000 and get 9,00/-',  # Malformed grouping must not be read as 9000.
+])
+def test_slot_and_normalization_false_positives(monkeypatch, text):
+    monkeypatch.setattr(model, '_model', None)
+    assert analyzer.analyze(text)['risk_score'] == 0
+
+
+def test_long_warning_applies_to_all_slots(monkeypatch):
+    from pathlib import Path
+
+    text = Path(__file__).with_name('fixtures').joinpath('telegram_payout.txt').read_text()
+    monkeypatch.setattr(model, '_model', None)
+    for prefix in ('Beware of this offer: ', 'Scam awareness example: ', 'Math exercise: '):
+        result = analyzer.analyze(prefix + text.lstrip('.'))
+        assert result['risk_score'] == 0
+        assert result['context_warning'] is True

@@ -133,7 +133,7 @@ Rules lead for explicit promotion and protective education. The optional model f
 ## Checks
 
 ```bash
-make test    # 63 backend tests + 7 frontend tests at this revision
+make test    # 90 backend tests + 7 frontend tests at this revision
 make lint    # Ruff backend checks
 make build   # Vite production frontend build
 make smoke   # Both dev servers must already be running

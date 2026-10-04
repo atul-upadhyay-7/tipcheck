@@ -25,7 +25,9 @@ def find_flags(text: str) -> tuple[list[dict], int]:
                 if not any(f["id"] == rid for f in flags):
                     flags.append({"id": rid, "phrase": m.group(), "weight": weight,
                                   "en": en, "hi": hi, "source": rules.source_for(rid)})
-        for phrase, caution in rules.amount_payout_claims(sentence):
+    # Payouts can be wrapped across lines or rendered as decorated currency tiers.
+    for clause in rules._PAYOUT_SPLIT.split(rules.payout_matching_text(text)):
+        for phrase, caution in rules.amount_payout_claims(clause):
             if caution:
                 suppressed += 1
                 continue

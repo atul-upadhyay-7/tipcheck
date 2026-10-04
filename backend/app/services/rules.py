@@ -1,5 +1,6 @@
 """Illustrative red-flag rules. Not a validated fraud detector."""
 import re
+import unicodedata
 from decimal import Decimal
 
 SEBI_SPOT_SCAM = "https://investor.sebi.gov.in/spot-any-scam.html"
@@ -57,11 +58,37 @@ def rules_promo(text: str) -> bool:
 
 
 # Explicit payment-to-payout claims, not arbitrary pairs of numbers or price targets.
-_AMOUNT = r"(?:₹|rs\.?|inr|rupees?|rupaye|रुपये)?\s*(?P<{name}>\d{{1,9}}(?:,\d{{3}})*(?:\.\d{{1,2}})?)(?:\s*(?:rupees?|rupaye|रुपये))?"
+_NUMBER = r"(?:\d{1,3}(?:,\d{2})*,\d{3}|\d{1,3}(?:,\d{3})+|\d{1,9})(?:\.\d{1,2})?"
+_CURRENCY = r"(?:₹|rs\.?|inr|rupees?|rupaye|रुपये)"
+_AMOUNT = _CURRENCY + r"?\s*(?P<{name}>" + _NUMBER + r")(?!\d|,\d)(?:\s*(?:" + _CURRENCY + r"))?(?:\s*/-)?"
+# Both a personal payout promise and a monetary payment/return tier.
 _PAYOUT_PATTERN = re.compile(
-    r"\b(?:invest|pay|send|deposit)\s+" + _AMOUNT.format(name="stake")
+    r"\b(?:invest|pay|send|deposit)\s+" + _AMOUNT.replace("{name}", "stake")
     + r"\s*[,=:>-]?\s*(?:and\s+)?(?:i|we)\s+(?:(?:will|can)\s+)?(?:give|pay|return)\s+you\s+"
-    + _AMOUNT.format(name="payout") + r"(?![\d,])", re.I)
+    + _AMOUNT.replace("{name}", "payout"), re.I)
+_SLOT_PATTERN = re.compile(
+    r"(?:\b(?:invest|pay|send|deposit)\s+|(?=" + _CURRENCY + r"\s*" + _NUMBER + r"\s*/-)|^(?=" + _CURRENCY + r"\s*\d))"
+    + _AMOUNT.replace("{name}", "stake")
+    + r"\s*[,=:>-]?\s*(?:and\s+)?(?:get|receive)\s+"
+    + _AMOUNT.replace("{name}", "payout"), re.I)
+# Keep sentence boundaries for local warnings, but line wraps are not sentences.
+_PAYOUT_SPLIT = re.compile(r'(?<=[.!?।;])\s+|\s+(?:but|however|lekin|लेकिन|परन्तु)\s+', re.I)
+
+
+def payout_matching_text(text: str) -> str:
+    """Normalize presentation noise only for rules, not model training features.
+    Currency and amount punctuation are preserved. Format controls inside words
+    are removed; decorative symbols become spaces, not glued-together words.
+    """
+    text = unicodedata.normalize("NFKC", text)
+    chars = []
+    for char in text:
+        category = unicodedata.category(char)
+        if category == "Cf" or 0xFE00 <= ord(char) <= 0xFE0F:
+            continue
+        chars.append(" " if category in {"So", "Sk"} else char)
+    return re.sub(r"\s+", " ", "".join(chars)).strip()
+
 _PAYOUT_EDUCATION = re.compile(
     r"\b(?:example|exercise|hypothetical|suppose|quoted?|classroom|math|warns?|warning|scam\s+awareness)\b"
     r"|उदाहरण|अभ्यास|सावधान", re.I)
@@ -71,14 +98,15 @@ def amount_payout_claims(clause: str):
     """Yield literal amount promises at least 2x a positive payment.
     A narrow heuristic, not financial verification or a model probability.
     """
-    for match in _PAYOUT_PATTERN.finditer(clause):
+    for match in sorted([m for pattern in (_PAYOUT_PATTERN, _SLOT_PATTERN)
+                         for m in pattern.finditer(clause)], key=lambda m: m.start()):
         stake = Decimal(match['stake'].replace(',', ''))
         payout = Decimal(match['payout'].replace(',', ''))
         if stake <= 0 or payout < stake * 2:
             continue
         if re.match(r"\s*(?:reward\s+points?|shares?|units?|points?|tokens?)\b", clause[match.end():], re.I):
             continue
-        prefix = clause[max(0, match.start() - 100):match.start()]
+        prefix = clause[:match.start()]
         tail = clause[match.end():match.end() + 100]
         educational = bool(_PAYOUT_EDUCATION.search(prefix) or re.search(
             r"\b(?:is|was)\s+(?:an?\s+)?(?:example|quote|scam|warning)|not\s+(?:a\s+)?(?:real\s+)?offer", tail, re.I))
