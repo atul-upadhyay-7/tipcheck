@@ -133,7 +133,7 @@ Rules lead for explicit promotion and protective education. The optional model f
 ## Checks
 
 ```bash
-make test    # 90 backend tests + 7 frontend tests at this revision
+make test    # 146 backend tests + 7 frontend tests at this revision
 make lint    # Ruff backend checks
 make build   # Vite production frontend build
 make smoke   # Both dev servers must already be running
@@ -186,3 +186,5 @@ Defaults need no environment file. `.env.example` is a reference, not an automat
 - No feature, score or design guarantees a competition win. Review eligibility, outside-help/disclosure and submission/IP terms before uploading.
 
 Official guidance: [SEBI scam warning patterns](https://investor.sebi.gov.in/spot-any-scam.html), [SEBI intermediary resources](https://www.sebi.gov.in/intermediaries.html).
+
+Advisory-based rule review and scenario coverage: [docs/RED_FLAG_REVIEW.md](docs/RED_FLAG_REVIEW.md). These are synthetic regression checks, not independent accuracy estimates.

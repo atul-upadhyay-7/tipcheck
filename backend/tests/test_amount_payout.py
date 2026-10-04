@@ -73,7 +73,7 @@ def test_payout_signal_deduplicated_and_weights_capped(monkeypatch):
 def test_decorated_and_slot_payouts(monkeypatch, text):
     monkeypatch.setattr(model, '_model', None)
     result = analyzer.analyze(text)
-    assert result['risk_score'] == 60
+    assert result['risk_score'] == (75 if '3 hour' in text else 60)
     assert result['label'] == 'promotion'
     assert result['flags'][0]['id'] == 'amount_payout'
 
