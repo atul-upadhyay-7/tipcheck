@@ -133,7 +133,7 @@ Rules lead for explicit promotion and protective education. The optional model f
 ## Checks
 
 ```bash
-make test    # 39 backend tests + 7 frontend tests at this revision
+make test    # 63 backend tests + 7 frontend tests at this revision
 make lint    # Ruff backend checks
 make build   # Vite production frontend build
 make smoke   # Both dev servers must already be running
@@ -158,7 +158,7 @@ Windows uses `.venv\Scripts\python.exe` and `.venv\Scripts\ruff.exe` instead. CI
 
 The starter CSV contains **286 entirely synthetic rows**, with group-separated train/test splits. Expanded training uses its 204 train rows plus 90 new English/Hinglish/Hindi scenario texts: **294 training rows**. A new frozen evaluation has 48 texts in 16 scenario groups. No private chat scraping or real scam-message dataset is included. Read [dataset provenance](backend/ml/data/README.md) and [expanded evaluation](backend/ml/data/EVALUATION_V2.md) before quoting metrics.
 
-The expanded hybrid/API macro-F1 is **0.609** on that same-author synthetic slice, with promotion precision **1.000**, recall **0.333**, and **25/48 abstentions**. Raw model argmax scores higher but is not the API behavior. Small synthetic results are not real-world accuracy; missed promotions and Hinglish limitations remain.
+The October 2 hybrid/API macro-F1 was **0.609** (before later amount-payout rule fixes) on that same-author synthetic slice, with promotion precision **1.000**, recall **0.333**, and **25/48 abstentions**. Raw model argmax scores higher but is not the API behavior. Small synthetic results are not real-world accuracy; missed promotions and Hinglish limitations remain.
 
 `make train` writes a git-ignored `backend/ml/model.joblib`. Restart the backend after training. Only load trusted team-produced model files: joblib/pickle can execute code. Historical synthetic benchmark numbers describe an earlier implementation, not current API performance or real-world accuracy. Do not tune repeatedly against the held-out split. The new slice was frozen before fitting but still needs independent review. Future changes based on it require a fresh evaluation set. Training no longer scores evaluation data automatically.
 

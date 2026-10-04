@@ -25,6 +25,15 @@ def find_flags(text: str) -> tuple[list[dict], int]:
                 if not any(f["id"] == rid for f in flags):
                     flags.append({"id": rid, "phrase": m.group(), "weight": weight,
                                   "en": en, "hi": hi, "source": rules.source_for(rid)})
+        for phrase, caution in rules.amount_payout_claims(sentence):
+            if caution:
+                suppressed += 1
+                continue
+            if not any(f["id"] == "amount_payout" for f in flags):
+                flags.append({"id": "amount_payout", "phrase": phrase, "weight": 60,
+                              "en": "This message asks for money and promises to pay back at least twice that amount. Check the claim and recipient independently; this is not proof of fraud.",
+                              "hi": "यह संदेश पैसे मांगकर कम से कम दोगुनी रकम लौटाने का वादा करता है। दावे और व्यक्ति की अलग से जांच करें; यह धोखाधड़ी का प्रमाण नहीं है।",
+                              "source": rules.SEBI_SPOT_SCAM})
     return flags, suppressed
 
 

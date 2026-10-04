@@ -1,5 +1,6 @@
 """Illustrative red-flag rules. Not a validated fraud detector."""
 import re
+from decimal import Decimal
 
 SEBI_SPOT_SCAM = "https://investor.sebi.gov.in/spot-any-scam.html"
 SEBI_FAKE_APP = "https://investor.sebi.gov.in/pdf/Fake%20trading%20app%20scam%20Landscape.pdf"
@@ -53,3 +54,33 @@ def fallback_label(text: str, flags: list) -> str:
 
 def rules_promo(text: str) -> bool:
     return any(active_promotion(clause) for clause in SENTENCE_SPLIT.split(text))
+
+
+# Explicit payment-to-payout claims, not arbitrary pairs of numbers or price targets.
+_AMOUNT = r"(?:₹|rs\.?|inr|rupees?|rupaye|रुपये)?\s*(?P<{name}>\d{{1,9}}(?:,\d{{3}})*(?:\.\d{{1,2}})?)(?:\s*(?:rupees?|rupaye|रुपये))?"
+_PAYOUT_PATTERN = re.compile(
+    r"\b(?:invest|pay|send|deposit)\s+" + _AMOUNT.format(name="stake")
+    + r"\s*[,=:>-]?\s*(?:and\s+)?(?:i|we)\s+(?:(?:will|can)\s+)?(?:give|pay|return)\s+you\s+"
+    + _AMOUNT.format(name="payout") + r"(?![\d,])", re.I)
+_PAYOUT_EDUCATION = re.compile(
+    r"\b(?:example|exercise|hypothetical|suppose|quoted?|classroom|math|warns?|warning|scam\s+awareness)\b"
+    r"|उदाहरण|अभ्यास|सावधान", re.I)
+
+
+def amount_payout_claims(clause: str):
+    """Yield literal amount promises at least 2x a positive payment.
+    A narrow heuristic, not financial verification or a model probability.
+    """
+    for match in _PAYOUT_PATTERN.finditer(clause):
+        stake = Decimal(match['stake'].replace(',', ''))
+        payout = Decimal(match['payout'].replace(',', ''))
+        if stake <= 0 or payout < stake * 2:
+            continue
+        if re.match(r"\s*(?:reward\s+points?|shares?|units?|points?|tokens?)\b", clause[match.end():], re.I):
+            continue
+        prefix = clause[max(0, match.start() - 100):match.start()]
+        tail = clause[match.end():match.end() + 100]
+        educational = bool(_PAYOUT_EDUCATION.search(prefix) or re.search(
+            r"\b(?:is|was)\s+(?:an?\s+)?(?:example|quote|scam|warning)|not\s+(?:a\s+)?(?:real\s+)?offer", tail, re.I))
+        caution = bool(WARNING.search(prefix) or re.search(r"\b(?:not|never)\s*$", prefix, re.I))
+        yield match.group().strip(), educational or caution

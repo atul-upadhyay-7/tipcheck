@@ -57,3 +57,7 @@ Rejected input can contain personal information. Replaced the default FastAPI/Py
 ## Overnight automation review
 
 CI now runs frontend unit tests (previously build only), plus a fresh model training and ml+rules API smoke job. Smoke requests have finite timeouts and an optional bounded startup wait/mode assertion. These commands pass locally; GitHub Actions execution must be checked separately after push. Corrected evaluation prose direction: the confusion matrix has one promotion predicted education, not education predicted promotion. No metrics, threshold or rules changed.
+
+## October 4 literal payout-claim fix
+
+Live reported input `PLEASE invest 499 I give you 1600` matched no fixed phrase rule, so the meter was 0 and content type uncertain. Added a narrow amount-aware signal: explicit invest/pay/send/deposit followed by an I/we give/pay/return-you amount at least twice the positive stake. Weight 60 yields high; exact matched phrase and bilingual explanation remain inspectable. Capitalization/PLEASE alone is not scored. Protective warning/example/math/quoted-warning context is suppressed; unrelated numbers, ordinary modest repayments and share/unit/point amounts do not trigger this new signal. Not an exhaustive fraud detector or safety verdict. No model/threshold changes. Existing frozen hybrid metrics are historical, not re-measured or tuned against this change. 24 fictional regression cases add to the prior suite (63 backend + 7 frontend). Existing demo seeds unchanged.

@@ -15,6 +15,8 @@ Total training: **294 rows, 75 groups**, 165 promotion / 129 education. New-lang
 
 ## Evaluation, first report
 
+These hybrid/rule numbers describe the October 2 rules at commit `f15266f`, not later amount-payout rule fixes. Model weights and threshold remain unchanged. Subsequent regression cases are development tests, not a fresh independent benchmark.
+
 The starter model was saved before expanded training and scored on this same frozen evaluation slice. It is not the historical starter test score. Expanded-model evaluation happened once after fitting; no changes were selected using the outcome. Re-running for reproducibility does not create a fresh independent benchmark.
 
 | System | Starter macro-F1 | Expanded macro-F1 | Expanded abstentions / 48 |
