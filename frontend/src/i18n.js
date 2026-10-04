@@ -98,6 +98,7 @@ export const STRINGS = {
     paste: "Paste message",
     check: "Check message",
     checking: "Checking...",
+    warming: "The server may be waking up. The first check can take about a minute on free hosting. Keep this tab open; a timed-out request is retried once.",
     verdictTitle: "What it looks like",
     verdict: {
       promotion: "Looks like a promotion",
@@ -126,7 +127,7 @@ export const STRINGS = {
       "Heuristic red-flag score, not scam probability. Promotion does not mean fraud. No flags does not mean safe. Sources have not been verified.",
     privacy: "Remove personal details. Messages are not intentionally stored.",
     error:
-      "Could not check this message. The request may have timed out. Check that the backend is running, then try again.",
+      "Could not check this message. The request may have timed out. Please check your connection and try again. This is not a zero-risk result.",
   },
   hi: {
     lesson: {
@@ -226,6 +227,7 @@ export const STRINGS = {
     paste: "संदेश चिपकाएं",
     check: "संदेश जांचें",
     checking: "जांच हो रही है...",
+    warming: "सर्वर शुरू हो रहा हो सकता है। मुफ्त होस्टिंग पर पहली जांच में लगभग एक मिनट लग सकता है। यह टैब खुला रखें; समय खत्म होने पर एक बार फिर कोशिश होगी।",
     verdictTitle: "यह कैसा लगता है",
     verdict: {
       promotion: "यह प्रचार जैसा लगता है",
@@ -254,6 +256,6 @@ export const STRINGS = {
       "यह नियमों पर आधारित चेतावनी स्कोर है, धोखाधड़ी की संभावना नहीं। प्रचार का मतलब धोखाधड़ी नहीं। कोई चेतावनी न मिलने का मतलब सुरक्षित नहीं। स्रोत सत्यापित नहीं किए गए हैं।",
     privacy: "निजी जानकारी हटाएं। संदेश जानबूझकर संग्रहित नहीं किए जाते।",
     error:
-      "संदेश की जांच नहीं हुई। अनुरोध का समय खत्म हो सकता है। बैकएंड चालू है या नहीं जांचें, फिर कोशिश करें।",
+      "संदेश की जांच नहीं हुई। अनुरोध का समय खत्म हो सकता है। कनेक्शन जांचकर फिर कोशिश करें। यह शून्य जोखिम का नतीजा नहीं है।",
   },
 };

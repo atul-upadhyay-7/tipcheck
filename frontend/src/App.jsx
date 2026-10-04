@@ -14,6 +14,7 @@ export default function App() {
   const [text, setText] = useState("");
   const [data, setData] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [warming, setWarming] = useState(false);
   const [error, setError] = useState(false);
   const [lang, setLang] = useState("en");
   const t = STRINGS[lang];
@@ -38,21 +39,25 @@ export default function App() {
     setData(null);
     setError(false);
     setBusy(false);
+    setWarming(false);
   }
 
   async function submit(e) {
     e.preventDefault();
     const id = ++requestId.current;
     setBusy(true);
+    setWarming(false);
     setError(false);
     setData(null);
     try {
-      const result = await analyzeMessage(text);
+      const result = await analyzeMessage(text, { onWarming: () => {
+        if (id === requestId.current) setWarming(true);
+      } });
       if (id === requestId.current) setData(result);
     } catch {
       if (id === requestId.current) setError(true);
     } finally {
-      if (id === requestId.current) setBusy(false);
+      if (id === requestId.current) { setBusy(false); setWarming(false); }
     }
   }
 
@@ -89,7 +94,7 @@ export default function App() {
                 {data ? (
                   <ResultPanel data={data} lang={lang} t={t} />
                 ) : (
-                  <EmptyResult t={t} busy={busy} />
+                  <EmptyResult t={t} busy={busy} warming={warming} />
                 )}
               </SpotlightCard>
             </div>

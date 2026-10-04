@@ -1,5 +1,5 @@
 import { ScanLine, TextSearch, BadgeAlert, ListChecks } from "lucide-react";
-export default function EmptyResult({ t, busy }) {
+export default function EmptyResult({ t, busy, warming }) {
   return (
     <section className="empty-result">
       <div className={`scan-icon ${busy ? "scanning" : ""}`}>
@@ -7,7 +7,7 @@ export default function EmptyResult({ t, busy }) {
       </div>
       <span className="eyebrow">{t.resultEyebrow}</span>
       <h2>{busy ? t.checking : t.emptyTitle}</h2>
-      <p>{t.emptyDescription}</p>
+      <p role={busy ? "status" : undefined}>{busy && warming ? t.warming : t.emptyDescription}</p>
       <div className="empty-steps">
         {[
           [TextSearch, t.emptyType],

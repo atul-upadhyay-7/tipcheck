@@ -71,3 +71,9 @@ This is still a bounded heuristic, not general scam detection or proof of readin
 ## 2026-10-04: official-advisory hardening review
 
 Reviewed SEBI and RBI guidance, added eight explained bilingual patterns plus financially scoped urgency phrases. Synthetic development battery improves from 4/24 flagged risk scenarios on deployed 0122bc3 to 24/24, while 24/24 genuine/protective controls remain zero. These tests informed implementation, so they do not measure independent accuracy. Six demo seeds unchanged. Full research sources, weights and limitations in RED_FLAG_REVIEW.md. No model retrain or evaluation-data tuning.
+
+## 2026-10-04: cold-start tolerance (local, pending publication)
+
+A phone check reported a request-timeout error near a 15-minute idle boundary. The exact 503-character input returned HTTP 200 / 60 High in 0.16 seconds during investigation, so no input error was reproduced. The service is confirmed Free in Render's dashboard; official https://render.com/docs/free says it sleeps after 15 idle minutes and typically takes about a minute to wake. This is consistent with cold start, not proof of the user's specific failure.
+
+Frontend attempt timeout raised from 15 to 90 seconds, with a possible-server-wake status after 10 seconds and one automatic retry only for an aborted timeout. A permanently stalled service stops after at most two 90-second attempts. Validation, bad JSON and ordinary network errors do not loop or become zero-risk results. New tests use scaled timing to simulate slow success, timeout retry, permanent stall and cleaned-up progress timers. No keepalive pings, paid hosting or scoring changes.
