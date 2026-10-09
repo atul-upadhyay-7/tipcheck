@@ -1280,3 +1280,13 @@ footer > span:last-child,
 .action-plan .verify-box ol {list-style:decimal; padding-left:20px;}
 .help-steps {list-style:decimal;}
 .action-plan .verify-box li {display:list-item;}
+/* Keyboard, touch and enlarged-text hardening without changing the house style. */
+.skip-link {position:absolute; top:8px; left:20px; z-index:100; padding:12px; background:#fffaf3; color:#a8442b; transform:translateY(-180%);}
+.skip-link:focus {transform:none;}
+#main-content:focus {outline:none;}
+textarea:focus-visible {outline:2px solid #a8442b; outline-offset:4px;}
+.language-control select, .coach-start, .coach-options button, .result-controls .note-button {min-height:44px;}
+.source-list a, .flag-card a, .context-note a, .verify-box a, .help-steps > li > a:not(.note-button) {display:inline-flex; align-items:center; min-height:44px;}
+.review-message, .flag-card strong, .detected-links li, .coach-feedback, .fictional-example {overflow-wrap:anywhere;}
+.result-panel .score-note, .preflight-panel .score-note, .flag-card p, .flag-card strong, .verify-box li, .verify-box a, .coach-feedback, .coach-disclaimer {font-size:13px; line-height:1.7;}
+.input-panel .error-note + form .check-button {margin-top:18px;}

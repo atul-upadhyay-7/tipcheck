@@ -2,7 +2,7 @@
 
 **Read the tip. Not the hype.**
 
-A bilingual financial-content literacy prototype for Sangyan Track E. Paste a fictional stock tip or investment pitch, inspect its likely content type and matched warning phrases, then practise how to question the message before trusting it.
+A bilingual financial-content literacy prototype for Sangyan Track E. Paste a fictional stock tip or investment pitch, inspect its likely content type and matched warning phrases, then open a separate fictional exercise or an independent action plan. A guided before-you-pay path adds self-reported payment context.
 
 > Educational prototype, not a fraud detector, fact-checker or investment adviser. Promotion does not mean fraud. No flags does not mean safe. Sources and identities are not verified.
 
@@ -11,9 +11,9 @@ A bilingual financial-content literacy prototype for Sangyan Track E. Paste a fi
 - **Paste and check:** 5-2000 characters, promotion / education / unclear verdict.
 - **Explainable red-flag meter:** unique rule weights summed and capped at 100, with the exact phrase, English/Hindi explanation and official SEBI reference. This is a design heuristic, not scam probability or a SEBI rating.
 - **Independent verification checklist:** compare the claimed entity and contacts against official resources. Detected message URLs stay inert text and are never fetched.
-- **Spot the signal literacy coach:** three short questions tied to the result. Learn the meaning of a matched phrase, the limits of the score and why a registration number is not proof of identity. Immediate bilingual feedback; no answers saved or safety certificate issued.
+- **Spot the signal literacy coach:** three short questions using a separate fictional example. Learn the meaning of a matched phrase, the limits of the score and why a registration number is not proof of identity. Immediate bilingual feedback; no answers saved or safety certificate issued.
 - **Phone-first interface:** paper/ink/terracotta palette, responsive input/evidence layout, full Hindi text, keyboard focus and reduced-motion support.
-- **Reliable local demo:** six fictional seeds, optional local model, 15-second request timeout, error/retry handling, stale-result prevention and phone result navigation.
+- **Reliable local demo:** six fictional seeds, optional local model, bounded 90-second attempts with one timeout retry, error handling, stale-result prevention and phone result navigation.
 
 ## Quick start
 
@@ -43,7 +43,7 @@ make backend
 make frontend
 ```
 
-Open the address Vite prints, normally `http://localhost:5173`. The browser calls `/api/analyze`; Vite proxies it to FastAPI on port 8000. API docs: `http://127.0.0.1:8000/docs`.
+Open the address Vite prints, normally `http://localhost:5173`. The browser calls `/api/analyze` or `/api/preflight` only after explicit review submission; Vite proxies it to FastAPI on port 8000. API docs: `http://127.0.0.1:8000/docs`.
 
 ### Windows PowerShell / manual setup
 
@@ -154,6 +154,21 @@ python3 scripts/smoke.py
 
 Windows uses `.venv\Scripts\python.exe` and `.venv\Scripts\ruff.exe` instead. CI also runs frontend tests and a freshly trained-model API smoke. Tests are developer regressions, not an independent accuracy benchmark. Screenshot checks and an automated accessibility check cover selected states, not every device or full accessibility certification. See [quality log](docs/QUALITY_LOG.md).
 
+## Guided-check upgrade and verification
+
+The local upgrade adds Start, optional message entry, six payment-context question pages, explicit review/submission, Result, Action plan, fictional Learn, urgent official help and method/privacy pages. Drafts stay in tab memory until the user submits; refresh clears them. No identity, bank account, credentials, login or private history is needed. Scores are heuristic cues, not scam probability or verified payees. The pause is voluntary; no payments or contact notes are sent.
+
+For reproducible browser checks, install Playwright and Chromium in the test environment (not the product bundle), build the frontend, then run from `frontend/`:
+
+```bash
+node e2e/routes.mjs
+node e2e/resources.mjs
+# Install axe-core in an audit workspace; set AXE_PATH to its axe.min.js
+AXE_PATH=/path/to/axe-core/axe.min.js node e2e/hardening.mjs
+```
+
+These scripts start the real local FastAPI service and test the built bundle at 320/390/1440 CSS pixels. Keep port 8000 free. Screenshots are saved under `/tmp/tipcheck-stage2`, `/tmp/tipcheck-stage3` and `/tmp/tipcheck-stage4`; inspect pixels, not only passing assertions. Browser/axe checks are selected-state coverage, not a full accessibility audit. API body limits, strict schemas, no-store responses, cancellation and fail-closed response checks are in the source; deployed headers and infrastructure abuse controls require separate verification. No real-user or real-message accuracy study is claimed.
+
 ## Dataset and model limits
 
 The starter CSV contains **286 entirely synthetic rows**, with group-separated train/test splits. Expanded training uses its 204 train rows plus 90 new English/Hinglish/Hindi scenario texts: **294 training rows**. A new frozen evaluation has 48 texts in 16 scenario groups. No private chat scraping or real scam-message dataset is included. Read [dataset provenance](backend/ml/data/README.md) and [expanded evaluation](backend/ml/data/EVALUATION_V2.md) before quoting metrics.
@@ -173,13 +188,13 @@ Defaults need no environment file. `.env.example` is a reference, not an automat
 | `TIPCHECK_MODEL_PATH` | Optional backend model file override; leave unset for default |
 | `TIPCHECK_CORS_ORIGINS` | Comma-separated allowed direct browser origins; empty by default |
 
-`npm run build` creates static assets but **does not include the Vite dev proxy**. Uploading `dist/` alone will not make the Python API work. FastAPI now serves a built `frontend/dist` and the `/api` aliases on one origin. Build the frontend and start FastAPI to serve the app on one origin; hosted deployment will be handled separately. No live hosting deployment has been created or verified.
+`npm run build` creates static assets but **does not include the Vite dev proxy**. Uploading `dist/` alone will not make the Python API work. FastAPI now serves a built `frontend/dist` and the `/api` aliases on one origin. Build the frontend and start FastAPI to serve the app on one origin; hosted deployment will be handled separately. The existing hosted Vercel/Render prototype predates this local upgrade. This upgrade still requires publication approval, backend-first deployment and deployed end-to-end verification; a local build is not production evidence.
 
 ## Privacy, safety and contribution
 
-- No database, analytics, intentional message storage or answer persistence. In the default setup, analysis stays on the local machine. Custom hosting/configuration can change that boundary.
+- No database, analytics, intentional message storage or answer persistence. In the default setup, analysis stays on the local machine. The existing hosted prototype sends submitted text to its analysis server. Custom hosting/configuration can change the boundary; provider logs and retention need separate review.
 - Remove names, phone numbers, account details and all private content before pasting. Never paste OTPs or credentials. No flags never means safe.
-- Message URLs are text only. Official references are fixed links, not proof that a message, entity or claim was verified.
+- Message URLs are text only. Official reference links are restricted to known official HTTPS hosts, not proof that a message, entity or claim was verified.
 - Rules can miss unfamiliar wording, sarcasm, quotation, mixed context and negation. Hindi/Hinglish still needs independent review.
 - Work in branches/PRs, run all checks and preserve dataset groups. Do not commit `.env`, model files, `.venv`, `node_modules`, personal chats or copied private data.
 - This project has no blanket license grant pending team/organiser terms review. Third-party packages retain their licenses. New UI notices: [dependency notices](docs/UI_LICENSE_NOTICES.md), [design notes](docs/UI_DESIGN.md).

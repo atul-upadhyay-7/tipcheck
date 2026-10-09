@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 from . import config
 from .api.routes import router
+from .security import SafetyMiddleware
 
 
 def create_app() -> FastAPI:
@@ -22,6 +23,7 @@ def create_app() -> FastAPI:
     if config.CORS_ORIGINS:
         app.add_middleware(CORSMiddleware, allow_origins=config.CORS_ORIGINS,
                            allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
+    app.add_middleware(SafetyMiddleware)
     app.include_router(router)  # Existing local/dev endpoints remain compatible.
     app.include_router(router, prefix="/api", include_in_schema=False)
     if config.FRONTEND_DIST.is_dir():

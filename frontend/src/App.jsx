@@ -33,11 +33,13 @@ export default function App() {
   const [lang, setLang] = useState("en");
   const t = STRINGS[lang];
   const requestId = useRef(0);
+  const activeRequest = useRef(null);
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
   useEffect(() => {
     const onRoute = () => {
+      activeRequest.current?.abort();
       requestId.current += 1;
       setBusy(false); setWarming(false); setError(false);
       setRoute(routeFromHash(window.location.hash));
@@ -51,7 +53,7 @@ export default function App() {
     }
     heading.current?.focus({ preventScroll: true });
     window.scrollTo(0, 0);
-    document.title = `${question ? question[lang] : route === "/check/review" ? (lang === "hi" ? "विवरण की समीक्षा" : "Review details") : route === "/" ? (lang === "hi" ? "शुरू" : "Start") : route.split("/").pop()} | TipCheck`;
+    document.title = `${question ? question[lang] : route === "/check/review" ? (lang === "hi" ? "विवरण की समीक्षा" : "Review details") : route === "/" ? (lang === "hi" ? "शुरू" : "Start") : ({"/check/message":lang === "hi" ? "संदेश देखें" : "Look at the message", "/check/result":lang === "hi" ? "जांच का परिणाम" : "Check result", "/check/actions":lang === "hi" ? "कार्ययोजना" : "Action plan", "/learn":lang === "hi" ? "सीखें" : "Learn", "/help":lang === "hi" ? "तुरंत मदद" : "Urgent help", "/about":lang === "hi" ? "गोपनीयता और तरीका" : "How it works and privacy"})[route]} | TipCheck`;
   }, [route, data, lang, question]);
 
   function navigate(path) { window.location.hash = path; }
@@ -61,6 +63,7 @@ export default function App() {
   }
 
   function changeText(value) {
+    activeRequest.current?.abort();
     requestId.current += 1;
     setText(value);
     setData(null);
@@ -87,13 +90,17 @@ export default function App() {
 
   async function submit(e, payment = false) {
     e.preventDefault();
+    if (busy) return;
+    activeRequest.current?.abort();
+    const controller = new AbortController();
+    activeRequest.current = controller;
     const id = ++requestId.current;
     setBusy(true);
     setWarming(false);
     setError(false);
     setData(null);
     try {
-      const result = await analyzeMessage(text, { context: payment ? context : null, onWarming: () => {
+      const result = await analyzeMessage(text, { signal: controller.signal, context: payment ? context : null, onWarming: () => {
         if (id === requestId.current) setWarming(true);
       } });
       if (id === requestId.current) { setData(result); navigate("/check/result"); }
@@ -108,7 +115,8 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <div className="app-shell">
         <div className="ambient" aria-hidden="true" />
-        <main className="mx-auto max-w-7xl px-5 sm:px-8">
+        <a className="skip-link" href="#main-content" onClick={e=>{e.preventDefault();document.getElementById("main-content")?.focus();}}>{lang === "hi" ? "मुख्य सामग्री पर जाएं" : "Skip to main content"}</a>
+        <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-5 sm:px-8">
           <Header lang={lang} onLangChange={setLang} t={t} compact={route !== "/"} />
           {route !== "/" && <nav className="flow-nav" aria-label={lang === "hi" ? "नेविगेशन" : "Check navigation"}><a href="#/">{lang === "hi" ? "शुरू" : "Start"}</a><button type="button" onClick={() => window.history.back()}>{lang === "hi" ? "वापस" : "Back"}</button><span>{lang === "hi" ? "रीफ्रेश करने पर निजी जानकारी मिट जाती है" : "Refresh clears private draft details"}</span></nav>}
           {route === "/" && <section className="start-choices" aria-labelledby="start-heading"><h2 ref={heading} tabIndex={-1} id="start-heading">{lang === "hi" ? "आप क्या जांचना चाहते हैं?" : "What would you like to check?"}</h2><div className="choice-grid">

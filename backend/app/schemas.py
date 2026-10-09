@@ -1,12 +1,13 @@
 """Request and response models for the public API."""
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .config import MAX_TEXT_LENGTH, MIN_TEXT_LENGTH
 
 
 class AnalyzeRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
     text: str = Field(min_length=MIN_TEXT_LENGTH, max_length=MAX_TEXT_LENGTH)
 
     @field_validator("text")
@@ -47,6 +48,7 @@ Answer = Literal['yes', 'no', 'unknown']
 
 
 class PreflightRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
     text: str = Field(default='', max_length=MAX_TEXT_LENGTH)
     first_payment: Answer = 'unknown'
     name_match: Answer = 'unknown'
