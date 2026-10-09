@@ -4,6 +4,8 @@ import ExampleList from "./components/ExampleList.jsx";
 import Header from "./components/Header.jsx";
 import MessageForm from "./components/MessageForm.jsx";
 import ResultPanel from "./components/ResultPanel.jsx";
+import PaymentContext from "./components/PaymentContext.jsx";
+import { EMPTY_CONTEXT } from "./preflight.js";
 import { STRINGS } from "./i18n.js";
 import SpotlightCard from "./components/SpotlightCard.jsx";
 import EmptyResult from "./components/EmptyResult.jsx";
@@ -11,6 +13,7 @@ import { MotionConfig } from "motion/react";
 import "./style.css";
 
 export default function App() {
+  const [context, setContext] = useState({ ...EMPTY_CONTEXT });
   const [text, setText] = useState("");
   const [data, setData] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -42,7 +45,12 @@ export default function App() {
     setWarming(false);
   }
 
-  async function submit(e) {
+  function changeContext(key, value) {
+    changeText(text);
+    setContext(old => ({ ...old, [key]: value }));
+  }
+
+  async function submit(e, payment = false) {
     e.preventDefault();
     const id = ++requestId.current;
     setBusy(true);
@@ -50,7 +58,7 @@ export default function App() {
     setError(false);
     setData(null);
     try {
-      const result = await analyzeMessage(text, { onWarming: () => {
+      const result = await analyzeMessage(text, { context: payment ? context : null, onWarming: () => {
         if (id === requestId.current) setWarming(true);
       } });
       if (id === requestId.current) setData(result);
@@ -72,10 +80,11 @@ export default function App() {
               <MessageForm
                 text={text}
                 onTextChange={changeText}
-                onSubmit={submit}
+                onSubmit={e => submit(e)}
                 busy={busy}
                 t={t}
               />
+              <PaymentContext context={context} onChange={changeContext} onSubmit={e => submit(e, true)} busy={busy} lang={lang} />
               {error && (
                 <p className="error-note" role="alert">
                   {t.error}
@@ -92,7 +101,7 @@ export default function App() {
             >
               <SpotlightCard className="output-panel">
                 {data ? (
-                  <ResultPanel data={data} lang={lang} t={t} />
+                  <ResultPanel key={requestId.current} data={data} lang={lang} t={t} />
                 ) : (
                   <EmptyResult t={t} busy={busy} warming={warming} />
                 )}

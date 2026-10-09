@@ -1206,3 +1206,27 @@ footer > span:last-child,
 .coach-disclaimer {
   margin-top: 10px;
 }
+
+/* Pre-payment extension: inherit the existing paper, ink and terracotta palette. */
+.payment-context {border-top: 1px solid #dfd5c7; margin-top: 24px; padding-top: 18px;}
+.payment-context summary {cursor:pointer; font-weight:650; color:#a8442b;}
+.payment-context > p {font-size:13px; margin:12px 0;}
+.context-question {display:grid; gap:6px; margin:16px 0; font-size:13px;}
+.context-question select {padding:10px; border:1px solid #d9cec0; background:#f7f3eb; border-radius:6px; max-width:100%; color:#322a24;}
+.preflight-panel {padding-bottom:24px; margin-bottom:24px; border-bottom:1px solid #dfd5c7;}
+.preflight-panel h2 {margin:12px 0; font-size:23px;}
+.preflight-score {font-size:40px; font-weight:650; color:#a8442b;}
+.preflight-score span {font-size:16px; color:#6b6056;}
+.preflight-panel p {margin-top:10px; font-size:13px;}
+.preflight-panel .preflight-score {font-size:40px;}
+.preflight-panel a {text-decoration:underline;}
+.preflight-panel ul {padding-left:18px;}
+.url-host {overflow-wrap:anywhere;}
+.pause-actions {margin-top:22px;}
+.note-button {margin:16px 0; border:1px solid #d9cec0; padding:10px 12px; border-radius:6px; background:#eee7db; color:#322a24; font-size:13px;}
+.pause-actions textarea {min-height:130px; font-size:13px;}
+.context-question select:focus-visible, input:focus-visible {outline:2px solid #a8442b; outline-offset:3px;}
+
+.message-only-title {margin-bottom:16px; font-size:14px; color:#6b6056;}
+.preflight-panel .verify-box li {display:block; margin-top:12px;}
+.preflight-panel .url-host {display:block; word-break:normal; overflow-wrap:anywhere; margin-bottom:4px;}

@@ -77,3 +77,14 @@ Reviewed SEBI and RBI guidance, added eight explained bilingual patterns plus fi
 A phone check reported a request-timeout error near a 15-minute idle boundary. The exact 503-character input returned HTTP 200 / 60 High in 0.16 seconds during investigation, so no input error was reproduced. The service is confirmed Free in Render's dashboard; official https://render.com/docs/free says it sleeps after 15 idle minutes and typically takes about a minute to wake. This is consistent with cold start, not proof of the user's specific failure.
 
 Frontend attempt timeout raised from 15 to 90 seconds, with a possible-server-wake status after 10 seconds and one automatic retry only for an aborted timeout. A permanently stalled service stops after at most two 90-second attempts. Validation, bad JSON and ordinary network errors do not loop or become zero-risk results. New tests use scaled timing to simulate slow success, timeout retry, permanent stall and cleaned-up progress timers. No keepalive pings, paid hosting or scoring changes.
+
+## 2026-10-09: voluntary before-you-pay workflow
+
+- Grounded against NPCI beneficiary-display rules, RBI scam cautions, SEBI investment warnings, DoT FRI scope, APP warning research and URL privacy/security guidance. Full source ledger: `PREFLIGHT_RESEARCH.md`.
+- Added `/api/preflight` with strict yes/no/unknown context, local URL parsing, bounded explainable fusion and correlated-signal deduplication. Existing `/analyze` response stays compatible.
+- Added bilingual optional payment-context form, actual voluntary 30-second pause and review-only trusted-contact note; no money, payment interception, payee lookup or external alerts.
+- Corrected the old "Local analysis" hero label to hosted analysis because production sends text to its backend.
+- 169 backend tests, 14 frontend unit tests, Ruff, production Vite build. Extra backend tests cover input privacy, unknowns, first-payment false-positive control, context polarity, caps, URL hosts/malformed URLs and correlated evidence.
+- Real local Chromium e2e against both Vite dev and the built production bundle served by FastAPI at desktop 1440x1050 and mobile 390x844, calling the real FastAPI server: scored message+context+URL, actual 30-second expiry, note privacy, bilingual empty/context-only checks, no horizontal overflow, stale-response rejection and HTTP errors. Desktop/mobile screenshots visually checked after the UI pass. Local server ran rules-only because the optional trained model artifact is not committed; production health currently reports ml+rules. ML files/logic unchanged.
+- Regression coverage is implementation testing, not held-out real-world accuracy. No Indian field study, scam-loss reduction claim or optimal-timer claim.
+- Local commit only, pending owner approval before push. Backend must be deployed before frontend; confirm `/api/preflight` after publication.

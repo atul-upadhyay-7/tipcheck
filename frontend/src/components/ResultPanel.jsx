@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ShieldQuestion, ExternalLink, Link2 } from "lucide-react";
+import PreflightPanel from "./PreflightPanel.jsx";
 import LiteracyCoach from "./LiteracyCoach.jsx";
 import FlagList from "./FlagList.jsx";
 import RiskMeter from "./RiskMeter.jsx";
@@ -16,6 +17,7 @@ export default function ResultPanel({ data, lang, t }) {
         <span className="eyebrow">02 / {t.resultEyebrow}</span>
         <span className="engine-badge">{t.modes[data.mode] || data.mode}</span>
       </div>
+      {data.preflight && <><PreflightPanel data={data} lang={lang} /><h3 className="message-only-title">{lang === "hi" ? "केवल संदेश की जांच" : "Message-only check"}</h3></>}
       <VerdictBadge label={data.label} t={t} />
       <RiskMeter score={data.risk_score} level={data.risk_level} t={t} />
       <p className="score-note">{t.scoreNote}</p>
