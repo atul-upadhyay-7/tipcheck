@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
-import { ShieldQuestion, ExternalLink, Link2 } from "lucide-react";
+import { Link2 } from "lucide-react";
 import PreflightPanel from "./PreflightPanel.jsx";
-import LiteracyCoach from "./LiteracyCoach.jsx";
 import FlagList from "./FlagList.jsx";
 import RiskMeter from "./RiskMeter.jsx";
 import VerdictBadge from "./VerdictBadge.jsx";
@@ -23,29 +22,6 @@ export default function ResultPanel({ data, lang, t }) {
       <p className="score-note">{t.scoreNote}</p>
       {data.context_warning && <p className="context-note">{t.context}</p>}
       <FlagList flags={data.flags} lang={lang} t={t} />
-      <div className="verify-box">
-        <h3>
-          <ShieldQuestion size={18} />
-          {t.verifyTitle}
-        </h3>
-        <ol>
-          {t.verify.map((v, i) => (
-            <li key={i}>
-              <span className="verify-number">{i + 1}</span>
-              <span>{v}</span>
-            </li>
-          ))}
-        </ol>
-        <a
-          href="https://www.sebi.gov.in/intermediaries.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {t.sebiResources}
-          <ExternalLink size={14} />
-        </a>
-      </div>
-      <LiteracyCoach data={data} lang={lang} t={t} />
       {data.links.length > 0 && (
         <div className="detected-links">
           <h3>

@@ -1260,3 +1260,23 @@ footer > span:last-child,
 .input-panel .answer-group ~ .check-button {margin-top:18px;}
 .input-panel .answer-group ~ .score-note {margin-top:12px;}
 .input-panel .review-list + .disclaimer-box {margin-bottom:18px;}
+.resource-nav {display:flex; gap:22px; flex-wrap:wrap; margin-top:28px; font-size:13px;}
+.resource-nav a, .info-page a, .action-plan a {color:#a8442b; text-decoration:underline;}
+.resource-nav a {min-height:44px; display:inline-flex; align-items:center;}
+.info-page h2 {font-size:20px; margin:26px 0 12px;}
+.info-page p, .action-plan p {font-size:14px; line-height:1.75; margin-top:14px;}
+.help-steps {padding-left:20px;}
+.help-steps li {padding:0 0 20px; border-bottom:1px solid #dfd5c7;}
+.info-page .note-button, .action-plan .note-button, .urgent-entry {display:inline-flex; align-items:center; min-height:44px; text-decoration:none;}
+.fictional-example {padding:18px; margin:24px 0; background:#f4eee3; border-left:3px solid #a8442b; font-size:16px;}
+.info-page .literacy-coach {margin:24px 0;}
+.source-list {padding-left:20px; line-height:2;}
+.action-plan .verify-box li {margin-top:12px;}
+.action-plan textarea {margin-top:14px; min-height:160px;}
+.action-plan .check-button {margin-top:18px;}
+.result-controls .check-button {margin-top:20px; text-decoration:none;}
+.route-content > a.note-button {display:inline-flex; align-items:center; min-height:44px; margin-top:18px;}
+.help-steps a.note-button {margin-right:12px;}
+.action-plan .verify-box ol {list-style:decimal; padding-left:20px;}
+.help-steps {list-style:decimal;}
+.action-plan .verify-box li {display:list-item;}

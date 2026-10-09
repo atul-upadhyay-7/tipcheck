@@ -2,7 +2,7 @@ export const STRINGS = {
   en: {
     lesson: {
       title: "Spot the signal",
-      subtitle: "A 60-second practice round using this result.",
+      subtitle: "A short practice round using a fictional message.",
       start: "Try the literacy coach",
       step: "Question",
       correct: "That is the key distinction.",
@@ -132,7 +132,7 @@ export const STRINGS = {
   hi: {
     lesson: {
       title: "चेतावनी को पहचानें",
-      subtitle: "इस नतीजे से 60 सेकंड का छोटा अभ्यास।",
+      subtitle: "काल्पनिक संदेश के साथ छोटा अभ्यास।",
       start: "समझने का अभ्यास करें",
       step: "प्रश्न",
       correct: "यही सही अंतर है।",
