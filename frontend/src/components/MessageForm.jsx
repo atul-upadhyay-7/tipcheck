@@ -5,7 +5,7 @@ import {
   MessageSquareText,
 } from "lucide-react";
 import { motion } from "motion/react";
-export default function MessageForm({ text, onTextChange, onSubmit, busy, t }) {
+export default function MessageForm({ text, onTextChange, onSubmit, busy, t, allowEmpty = false, actionLabel }) {
   return (
     <form onSubmit={onSubmit}>
       <div className="panel-heading">
@@ -39,14 +39,14 @@ export default function MessageForm({ text, onTextChange, onSubmit, busy, t }) {
       <motion.button
         whileTap={{ scale: 0.98 }}
         className="check-button"
-        disabled={busy || text.trim().length < 5}
+        disabled={busy || (!allowEmpty && text.trim().length < 5)}
       >
         {busy ? (
           <LoaderCircle className="loading-icon" size={18} />
         ) : (
           <ShieldIcon />
         )}{" "}
-        {busy ? t.checking : t.check}
+        {busy ? t.checking : (actionLabel || t.check)}
         <ArrowRight size={18} />
       </motion.button>
       <p id="message-help" className="privacy-note">

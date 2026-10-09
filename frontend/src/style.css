@@ -1247,3 +1247,16 @@ footer > span:last-child,
 .route-content .payment-context {border:0; padding-top:0; margin-top:0;}
 @media(max-width:600px) {.choice-grid {grid-template-columns:1fr;} .flow-heading {font-size:26px;}}
 .flow-heading:focus, .start-choices h2:focus {outline:none;}
+.answer-group {border:0; padding:0; margin:20px 0; display:grid; gap:12px;}
+.answer-choice {display:flex; gap:14px; align-items:center; min-height:54px; padding:14px; border:1px solid #d9cec0; border-radius:6px; background:#f7f3eb; cursor:pointer;}
+.answer-choice:has(input:checked) {border-color:#a8442b; font-weight:600;}
+.answer-choice input {width:20px; height:20px; accent-color:#a8442b; flex-shrink:0;}
+.flow-progress {font-size:13px; color:#6b6056;}
+.review-list > div {padding:18px 0; border-bottom:1px solid #dfd5c7;}
+.review-list dt {font-weight:600; font-size:14px; margin-bottom:8px;}
+.review-list dd {margin:0; font-size:14px;}
+.review-message {white-space:pre-wrap; overflow-wrap:anywhere;}
+.review-list .note-button {min-height:44px; margin:10px 0 0;}
+.input-panel .answer-group ~ .check-button {margin-top:18px;}
+.input-panel .answer-group ~ .score-note {margin-top:12px;}
+.input-panel .review-list + .disclaimer-box {margin-bottom:18px;}
