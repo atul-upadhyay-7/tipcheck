@@ -1,11 +1,11 @@
 import { ShieldCheck, Languages, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
-export default function Header({ lang, onLangChange, t }) {
+export default function Header({ lang, onLangChange, t, compact = false }) {
   return (
     <header>
       <nav className="flex items-center justify-between gap-4 py-6">
-        <a className="brand flex items-center gap-3" href="#">
+        <a className="brand flex items-center gap-3" href="#/">
           <span className="brand-icon">
             <ShieldCheck size={23} />
           </span>
@@ -22,7 +22,7 @@ export default function Header({ lang, onLangChange, t }) {
           </select>
         </label>
       </nav>
-      <motion.div
+      {!compact && <motion.div
         className="hero"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function Header({ lang, onLangChange, t }) {
           <span>{t.tagBilingual}</span>
           <span>{t.tagExplainable}</span>
         </div>
-      </motion.div>
+      </motion.div>}
     </header>
   );
 }

@@ -88,3 +88,11 @@ Frontend attempt timeout raised from 15 to 90 seconds, with a possible-server-wa
 - Real local Chromium e2e against both Vite dev and the built production bundle served by FastAPI at desktop 1440x1050 and mobile 390x844, calling the real FastAPI server: scored message+context+URL, actual 30-second expiry, note privacy, bilingual empty/context-only checks, no horizontal overflow, stale-response rejection and HTTP errors. Desktop/mobile screenshots visually checked after the UI pass. Local server ran rules-only because the optional trained model artifact is not committed; production health currently reports ml+rules. ML files/logic unchanged.
 - Regression coverage is implementation testing, not held-out real-world accuracy. No Indian field study, scam-loss reduction claim or optimal-timer claim.
 - Local commit only, pending owner approval before push. Backend must be deployed before frontend; confirm `/api/preflight` after publication.
+
+## 2026-10-09: Stage 1 route/state foundation, local only
+
+- Start, message, payment context and result are now distinct hash-route page views. Preserved original palette, quick message-only check and the first preflight pass.
+- Private draft is memory-only. Route changes cancel stale response acceptance; edits invalidate results; refresh drops private content. Direct result links without evidence return to message entry with an explanation. Unknown routes fall back to Start.
+- Added route tests and real built-bundle e2e at 320, 390 and 1440px covering quick and guided checks, browser Back after edits, refresh/privacy, direct/unknown routes, Hindi and no storage/overflow/page errors. Desktop/mobile screenshots inspected after fixing screenshot animation timing and mobile layout.
+- First preflight e2e adapted to routes and still passes real 30-second timer, fusion, note privacy, edits, stale requests and error handling at desktop/mobile. 169 backend + 16 frontend unit tests, Ruff and production build passed.
+- This is the foundation milestone, not the completed rebuild: six separate question pages, review consent, separate actions/learn/help/about and accessibility/security hardening remain. Full research plan is PRODUCT_PLAN.md. Market gap is a hypothesis, not validated demand. No accounts/history or market-ready claims.
